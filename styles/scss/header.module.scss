@@ -4,6 +4,7 @@
 .header {
   display: flex;
   position: fixed;
+  flex-flow: row nowrap;
   z-index: 10;
   background-color: $header-bg-clr;
   justify-content: space-between;
@@ -13,7 +14,7 @@
   height: 5rem;
   overflow: visible;
 
-  ::after {
+  &::after {
     content: "";
     background-color: $header-underline-clr;
     position: absolute;
@@ -22,5 +23,16 @@
     left: 50%;
     transform: translate(-50%, 0);
     width: 80vw;
+  }
+  .tb_mb_logo {
+    display: none;
+  }
+  @include tablet {
+    .desktop_logo {
+      display: none;
+    }
+    .tb_mb_logo {
+      display: block;
+    }
   }
 }

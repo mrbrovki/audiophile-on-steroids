@@ -1,11 +1,76 @@
 @import "variables";
+@import "responsive";
 
-.nav_list ul .link,
+.nav_list {
+  position: relative;
+}
+
+.link,
 .nav_link {
   text-transform: uppercase;
-  color: $header-navlinks-clr;
   display: inline-block;
   font-weight: 700;
   font-size: 1.2rem;
-  margin: 1rem;
+  margin: 0 1rem;
+}
+.link a,
+.nav_link a {
+  color: $header-navlinks-clr;
+
+  &:hover {
+    color: #fff;
+    filter: drop-shadow(0 0 10px #fff);
+  }
+}
+
+.hamburger {
+  display: none;
+}
+.tb_mb_logo {
+  display: none;
+}
+
+@include tablet {
+  .link,
+  .nav_link {
+    display: block;
+    background-color: $nav-tb-mb-bg-clr;
+    line-height: 3rem;
+  }
+  .link a,
+  .nav_link a {
+    display: block;
+    padding: 0 2rem;
+    color: $nav-tb-mb-clr;
+    width: 13rem;
+    margin-left: -3.5rem;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  .nav_list {
+    position: absolute;
+    overflow: hidden;
+    max-height: 0rem;
+    width: 13rem;
+    background-color: rgb(255, 255, 255);
+    top: 5rem;
+    z-index: 20;
+    border-radius: 0.2rem;
+  }
+  .nav_list ul {
+    margin: 0;
+  }
+  .hamburger {
+    display: block;
+    width: 1.6rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .shown {
+    max-height: 28rem;
+    transition: max-height 1s;
+  }
 }

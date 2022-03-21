@@ -3,6 +3,10 @@
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   z-index: 10;
   background-color: #191919;
   -webkit-box-pack: justify;
@@ -17,7 +21,7 @@
   overflow: visible;
 }
 
-.header ::after {
+.header::after {
   content: "";
   background-color: #ffffff5d;
   position: absolute;
@@ -27,5 +31,18 @@
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   width: 80vw;
+}
+
+.header .tb_mb_logo {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .header .desktop_logo {
+    display: none;
+  }
+  .header .tb_mb_logo {
+    display: block;
+  }
 }
 /*# sourceMappingURL=header.module.css.map */
