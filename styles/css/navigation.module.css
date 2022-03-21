@@ -1,0 +1,10 @@
+.nav_list ul .link,
+.nav_link {
+  text-transform: uppercase;
+  color: #b4b4b4;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 1rem;
+}
+/*# sourceMappingURL=navigation.module.css.map */

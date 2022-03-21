@@ -1,0 +1,11 @@
+@import "variables";
+
+.nav_list ul .link,
+.nav_link {
+  text-transform: uppercase;
+  color: $header-navlinks-clr;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 1rem;
+}

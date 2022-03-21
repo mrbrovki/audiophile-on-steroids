@@ -23,13 +23,4 @@
     transform: translate(-50%, 0);
     width: 80vw;
   }
-  #{&}_nav_list ul #{&}_link,
-  #{&}_nav_link {
-    text-transform: uppercase;
-    color: $header-navlinks-clr;
-    display: inline-block;
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin: 1rem;
-  }
 }
