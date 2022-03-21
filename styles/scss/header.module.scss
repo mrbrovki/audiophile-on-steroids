@@ -1,0 +1,35 @@
+@import "responsive";
+@import "variables";
+
+.header {
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  background-color: $header-bg-clr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10vw 0 10vw;
+  width: 100vw;
+  height: 5rem;
+  overflow: visible;
+
+  ::after {
+    content: "";
+    background-color: $header-underline-clr;
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80vw;
+  }
+  #{&}_nav_list ul #{&}_link,
+  #{&}_nav_link {
+    text-transform: uppercase;
+    color: $header-navlinks-clr;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 1rem;
+  }
+}
