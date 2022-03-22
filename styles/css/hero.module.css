@@ -1,0 +1,42 @@
+.hero_bg {
+  position: fixed;
+  top: 0;
+  z-index: -100;
+  width: 100vw;
+  height: 80vh;
+  background-color: #1a1a1a;
+}
+
+.top {
+  background-color: white;
+  margin-top: 80rem;
+  height: 100rem;
+}
+
+.hero .hero_h1 {
+  margin: 20rem 10vw 0 10vw;
+  overflow: hidden;
+  width: 500px;
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.hero .hero_h1::before {
+  display: block;
+  color: #414141;
+  font-weight: 500;
+  letter-spacing: 0.4rem;
+  font-size: 1.2rem;
+  content: "NEW PRODUCT";
+}
+
+.hero .hero_p {
+  margin: 2rem 10vw 0 10vw;
+  width: 350px;
+  font-weight: 100;
+  color: #ffffff9e;
+}
+/*# sourceMappingURL=hero.module.css.map */

@@ -4,6 +4,7 @@
 .header {
   display: flex;
   position: fixed;
+  top: 0;
   flex-flow: row nowrap;
   z-index: 10;
   background-color: $header-bg-clr;

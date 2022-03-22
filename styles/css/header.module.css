@@ -3,6 +3,7 @@
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  top: 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;

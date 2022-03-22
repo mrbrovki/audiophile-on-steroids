@@ -1,5 +1,4 @@
-
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useState } from 'react'
 import Link from 'next/link';
 // components
 import Cart from './Cart';
@@ -8,7 +7,7 @@ import Navigation from './Navigation';
 import styles from '../styles/scss/header.module.scss';
 
 const Header:FC = () => {
-  const [isOverlay, setIsOverlay] = useState(true);
+  const [isOverlay, setIsOverlay] = useState(false);
   const [showNav, setShowNav] = useState('hidden');
   const [showCart, setShowCart] = useState(true);
 
@@ -61,7 +60,9 @@ const Header:FC = () => {
         </Link>
         <Cart toggleCart={toggleCart} showCart={showCart} closeCart={closeCart}/>
       </header>
-    {isOverlay && <div className={styles.overlay} onClick={overlayClick}></div>}
+      {
+       isOverlay && <div className={styles.overlay} onClick={overlayClick}></div>
+      }
     </>
   )
 }
