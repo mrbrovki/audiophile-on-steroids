@@ -4,7 +4,7 @@
   z-index: -100;
   width: 100vw;
   height: 80vh;
-  background-color: #1a1a1a;
+  background-color: #181818;
 }
 
 .top {
@@ -38,5 +38,14 @@
   width: 350px;
   font-weight: 100;
   color: #ffffff9e;
+}
+
+.hero .bg_pic {
+  position: fixed;
+  top: 0;
+  height: 60rem;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -10;
 }
 /*# sourceMappingURL=hero.module.css.map */

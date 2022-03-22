@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { createRef, FC, useState } from 'react'
 import Link from 'next/link';
 // components
 import Cart from './Cart';
@@ -9,7 +9,7 @@ import styles from '../styles/scss/header.module.scss';
 const Header:FC = () => {
   const [isOverlay, setIsOverlay] = useState(false);
   const [showNav, setShowNav] = useState('hidden');
-  const [showCart, setShowCart] = useState(true);
+  const [showCart, setShowCart] = useState(false);
 
   //nav functions
   const toggleNav = () =>{

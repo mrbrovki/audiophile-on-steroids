@@ -9,15 +9,14 @@ interface CartProps{
 }
 
 const Cart:FC<CartProps> = ({toggleCart, closeCart, showCart}) => {
-  
   return (
    <>
     <div className={styles.cart_clicker} onClick={toggleCart}>
       <img className={styles.cart_icon} src='/assets/shared/desktop/icon-cart.svg'/>
+      {showCart && <CartItems />}
      </div>
-     {showCart && <CartItems />}
    </>
   )
-}
+};
 
-export default Cart
+export default Cart;

@@ -4,7 +4,7 @@
   z-index: -100;
   width: 100vw;
   height: 80vh;
-  background-color: rgb(26, 26, 26);
+  background-color: #181818;
 }
 .top {
   background-color: white;
@@ -36,5 +36,13 @@
     width: 350px;
     font-weight: 100;
     color: #ffffff9e;
+  }
+  .bg_pic {
+    position: fixed;
+    top: 0;
+    height: 60rem;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -10;
   }
 }

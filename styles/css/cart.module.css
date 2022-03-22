@@ -1,3 +1,7 @@
+.cart_clicker {
+  position: relative;
+}
+
 .cart_clicker:hover {
   cursor: pointer;
 }

@@ -10,8 +10,6 @@ interface NavProps{
 }
 
 const Navigation:FC<NavProps> = ({toggleNav, showNav, closeNav}) => {
-  
-
   return (
     <>
       <img src='/assets/shared/tablet/icon-hamburger.svg' className={styles.hamburger} alt='ham' onClick={toggleNav}/>
