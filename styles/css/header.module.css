@@ -45,4 +45,14 @@
     display: block;
   }
 }
+
+.overlay {
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #191919b8;
+}
 /*# sourceMappingURL=header.module.css.map */

@@ -1,12 +1,35 @@
-import type { NextPage } from 'next';
-import { useRouter } from 'next/router';
+import type { NextPage, GetStaticProps, GetStaticPaths} from 'next';
+import { categories } from '../../public/categories';
 import React from 'react';
 
-const category:NextPage = () => {
- const router = useRouter();
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = categories.map(ctg =>{
+    return{
+       params: {category: ctg}
+    }
+  })
+  return{
+    paths,
+    fallback: false
+    
+  }
+}
+export const getStaticProps:GetStaticProps = async () => {
+  // const response = await fetch('/assets/data.json');
+  // const data = await response.json();
+  // return {
+  //   props: {data}
+  // }
+  return{
+    props: {data: "fuck"}
+  }
+}
+
+const Category:NextPage<{data:string}> = ({data}) => {
+ console.log(data)
   return (
-    <div>{router.query.category}</div>
+    <div>{}</div>
   )
 }
 
-export default category;
+export default Category;

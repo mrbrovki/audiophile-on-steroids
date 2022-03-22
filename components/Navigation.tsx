@@ -1,21 +1,25 @@
-import React, {useState} from 'react'
+import React, {useState, FC, useEffect} from 'react'
 import { categories } from '../public/categories';
 import Link from 'next/link';
 import styles from '../styles/css/navigation.module.css';
-const Navigation = () => {
-  const [showNav, setShowNav] = useState('hidden');
-  const handleClick = () =>{
-    setShowNav(prev => prev === 'hidden'? 'shown': 'hidden');
-  };
+
+interface NavProps{
+  toggleNav: () => void;
+  closeNav: () => void;
+  showNav: string;
+}
+
+const Navigation:FC<NavProps> = ({toggleNav, showNav, closeNav}) => {
+  
 
   return (
     <>
-      <img src='/assets/shared/tablet/icon-hamburger.svg' className={styles.hamburger} alt='ham' onClick={handleClick}/>
+      <img src='/assets/shared/tablet/icon-hamburger.svg' className={styles.hamburger} alt='ham' onClick={toggleNav}/>
       <nav className={styles.nav_list + ' ' + styles[showNav]}>
        <ul>
         <li className={styles.link}>
          <Link href={'/'}>
-          <a>home</a>
+          <a onClick={closeNav}>home</a>
          </Link>
         </li>
          {
@@ -26,7 +30,7 @@ const Navigation = () => {
                pathname: '/categories/[category]',
                query: {category: category}
               }}>
-              <a>{category}</a>
+              <a onClick={closeNav}>{category}</a>
              </Link>
             </li>
           )})

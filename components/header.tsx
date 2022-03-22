@@ -1,28 +1,68 @@
 
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import Link from 'next/link';
-// styles
-import styles from '../styles/scss/header.module.scss';
+// components
 import Cart from './Cart';
 import Navigation from './Navigation';
+// styles
+import styles from '../styles/scss/header.module.scss';
 
 const Header:FC = () => {
-  console.log('wtf')
+  const [isOverlay, setIsOverlay] = useState(true);
+  const [showNav, setShowNav] = useState('hidden');
+  const [showCart, setShowCart] = useState(true);
+
+  //nav functions
+  const toggleNav = () =>{
+    closeCart();
+    showNav === 'shown'? closeNav(): openNav();
+  };
+  const openNav = () =>{
+    setIsOverlay(true);
+    setShowNav('shown');
+  }
+  const closeNav = () =>{
+    setIsOverlay(false);
+    setShowNav('hidden');
+  }
+
+  //cart functions
+  const toggleCart = () =>{
+    closeNav();
+    showCart === true? closeCart(): openCart();
+  };
+  const openCart = () =>{
+    setIsOverlay(true);
+    setShowCart(true);
+  }
+  const closeCart = () =>{
+    setIsOverlay(false);
+    setShowCart(false);
+  }
+
+  const overlayClick = () =>{
+    closeNav();
+    closeCart();
+  }
+
   return (
-    <header className={styles.header}>
-      <Link href={'/'}>
+    <>
+      <header className={styles.header}>
+        <Link href={'/'}>
         <a className={styles.desktop_logo}>
           <img src='/assets/shared/desktop/logo.svg' alt='logo' />
         </a>
-      </Link>
-      <Navigation />
-      <Link href={'/'}>
+        </Link>
+        <Navigation toggleNav={toggleNav} showNav={showNav} closeNav={closeNav}/>
+        <Link href={'/'}>
         <a className={styles.tb_mb_logo}>
           <img src='/assets/shared/desktop/logo.svg' alt='logo' />
         </a>
-      </Link>
-      <Cart />
-    </header>
+        </Link>
+        <Cart toggleCart={toggleCart} showCart={showCart} closeCart={closeCart}/>
+      </header>
+    {isOverlay && <div className={styles.overlay} onClick={overlayClick}></div>}
+    </>
   )
 }
 

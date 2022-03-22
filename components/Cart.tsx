@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { FC, useState} from 'react';
 import styles from '../styles/css/cart.module.css';
 import CartItems from './CartItems';
 
-const Cart = () => {
- const [showCartItems, setShowCartItems] = useState(false);
- const handleCartClick = () => {
-  setShowCartItems(prev => prev === true? false: true);
- }
+interface CartProps{
+  toggleCart: () => void;
+  closeCart: () => void;
+  showCart: boolean;
+}
 
+const Cart:FC<CartProps> = ({toggleCart, closeCart, showCart}) => {
+  
   return (
    <>
-    <div className={styles.cart_clicker} onClick={handleCartClick}>
+    <div className={styles.cart_clicker} onClick={toggleCart}>
       <img className={styles.cart_icon} src='/assets/shared/desktop/icon-cart.svg'/>
      </div>
-    {showCartItems && 
-      <CartItems />
-    }
+     {showCart && <CartItems />}
    </>
   )
 }
