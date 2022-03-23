@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import styles from '../styles/css/cart_items.module.css';
 
 const CartItems = () => {
   return (
-    <div style={{background: 'white', width: 100, height: 100, position: 'absolute', top: 50}}>
-      cartitems
+    <div className={styles.cart_items}>
+
     </div>
   )
 }
