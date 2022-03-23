@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/css/hero.module.css';
+import SeeProduct from './SeeProduct';
 
 const Hero = () => {
   return (
@@ -15,6 +16,7 @@ const Hero = () => {
         objectPosition={'center right'}
       />
       </div>
+      <SeeProduct href={'/categories/headphones/4'} bg={'orange'}/>
     </div>
   )
 }

@@ -1,0 +1,89 @@
+.orange {
+  display: block;
+  margin-left: 12rem;
+  text-decoration: none;
+  width: 10rem;
+  line-height: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #7d7d7d;
+  border: 2px solid #7d7d7d;
+  border-radius: 0.2rem;
+  color: #fff;
+  border: none;
+  background-color: #d87c49;
+}
+
+@media (max-width: 1024px) {
+  .orange {
+    margin: 2rem auto;
+  }
+}
+
+.orange:hover {
+  background-color: #e9773a;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.black {
+  display: block;
+  margin-left: 12rem;
+  text-decoration: none;
+  width: 10rem;
+  line-height: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #7d7d7d;
+  border: 2px solid #7d7d7d;
+  border-radius: 0.2rem;
+  background-color: black;
+  border-color: black;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .black {
+    margin: 2rem auto;
+  }
+}
+
+.black:hover {
+  color: black;
+  border-color: black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: none;
+}
+
+.transparent {
+  display: block;
+  margin-left: 12rem;
+  text-decoration: none;
+  width: 10rem;
+  line-height: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #7d7d7d;
+  border: 2px solid #7d7d7d;
+  border-radius: 0.2rem;
+  color: black;
+  border-color: black;
+}
+
+.transparent:hover {
+  background-color: black;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (max-width: 1024px) {
+  .transparent {
+    margin: 2rem auto;
+  }
+}
+/*# sourceMappingURL=see_product.module.css.map */

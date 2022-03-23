@@ -1,20 +1,4 @@
-.hero_bg {
-  position: fixed;
-  top: 0;
-  z-index: -100;
-  width: 100vw;
-  height: 80vh;
-  background-color: #181818;
-}
-
-.top {
-  background-color: white;
-  margin-top: 80rem;
-  height: 100rem;
-}
-
 .hero .hero_h1 {
-  margin: 20rem 10vw 0 10vw;
   overflow: hidden;
   width: 500px;
   font-size: 4rem;
@@ -33,9 +17,17 @@
   content: "NEW PRODUCT";
 }
 
+.hero .hero_bg {
+  position: fixed;
+  top: 0;
+  z-index: -100;
+  width: 100vw;
+  height: 80vh;
+  background-color: #181818;
+}
+
 .hero .hero_p {
-  margin: 2rem 10vw 0 10vw;
-  width: 350px;
+  width: 20rem;
   font-weight: 100;
   color: #ffffff9e;
 }
@@ -47,5 +39,27 @@
   width: 100vw;
   overflow: hidden;
   z-index: -10;
+}
+
+@media (max-width: 10240px) {
+  .hero .hero_h1 {
+    margin: 12rem 0 0 12rem;
+  }
+  .hero .hero_p {
+    margin: 0 12rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero .hero_h1,
+  .hero .hero_p {
+    text-align: center;
+  }
+  .hero .hero_h1 {
+    margin: 12rem auto 0;
+  }
+  .hero .hero_p {
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=hero.module.css.map */

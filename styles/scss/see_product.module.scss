@@ -1,0 +1,78 @@
+@import "responsive";
+
+.orange {
+  display: block;
+  margin-left: 12rem;
+  text-decoration: none;
+  width: 10rem;
+  line-height: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #7d7d7d;
+  border: 2px solid #7d7d7d;
+  border-radius: 0.2rem;
+  color: #fff;
+  border: none;
+  background-color: #d87c49;
+  @include tablet {
+    margin: 2rem auto;
+  }
+
+  &:hover {
+    background-color: #e9773a;
+    transition: 0.3s;
+  }
+}
+
+.black {
+  display: block;
+  margin-left: 12rem;
+  text-decoration: none;
+  width: 10rem;
+  line-height: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #7d7d7d;
+  border: 2px solid #7d7d7d;
+  border-radius: 0.2rem;
+  background-color: black;
+  border-color: black;
+  color: #fff;
+  @include tablet {
+    margin: 2rem auto;
+  }
+
+  &:hover {
+    color: black;
+    border-color: black;
+    transition: 0.3s;
+    background: none;
+  }
+}
+
+.transparent {
+  display: block;
+  margin-left: 12rem;
+  text-decoration: none;
+  width: 10rem;
+  line-height: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #7d7d7d;
+  border: 2px solid #7d7d7d;
+  border-radius: 0.2rem;
+  color: black;
+  border-color: black;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+  }
+  @include tablet {
+    margin: 2rem auto;
+  }
+}
