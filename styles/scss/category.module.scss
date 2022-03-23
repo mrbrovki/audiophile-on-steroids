@@ -1,0 +1,22 @@
+@import "variables";
+
+.category_h1 {
+  background-color: $header-bg-clr;
+  position: fixed;
+  top: 0;
+  z-index: -100;
+  width: 100%;
+  color: $header-clr;
+  padding-top: 10rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  height: 20rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.lorem {
+  height: 100rem;
+  margin-top: 20rem;
+  background-color: #fff;
+}

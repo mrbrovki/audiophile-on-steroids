@@ -18,7 +18,7 @@ const Hero = () => {
       </div>
       <SeeProduct href={'/categories/headphones/4'} bg={'orange'}/>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

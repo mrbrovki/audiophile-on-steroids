@@ -1,10 +1,12 @@
 import type { NextPage } from 'next';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 const Layout:NextPage = ({children}) => {
   return( 
   <>
     <Header />
-    <div>{children}</div>
+    {children}
+    <Footer />
   </>)
 }
 
