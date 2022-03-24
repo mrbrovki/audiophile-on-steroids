@@ -1,6 +1,8 @@
 .main {
-  margin-top: 26rem;
-  padding: 5rem 12rem;
+  display: block;
+  margin-top: 25rem;
+  padding: 5rem 10%;
+  overflow-x: hidden;
   background-color: #fff;
 }
 /*# sourceMappingURL=main.module.css.map */

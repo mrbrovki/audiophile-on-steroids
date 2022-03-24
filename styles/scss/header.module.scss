@@ -13,7 +13,7 @@
   padding: 0 10vw 0 10vw;
   width: 100vw;
   height: 5rem;
-  overflow: visible;
+  overflow-y: visible;
 
   &::after {
     content: "";

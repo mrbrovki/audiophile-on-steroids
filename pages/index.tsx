@@ -14,9 +14,7 @@ const Home: NextPage = () => {
         <Hero />
         <Main>
           <CategoryLinks />
-           <div style={{height: '100rem',backgroundColor: '#fff'}}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eaque quod quas vel quis labore at aut amet nemo sapiente, ratione adipisci sunt nostrum sit modi nihil quaerat ullam autem quam. Doloremque quisquam odio porro, nemo odit vitae voluptates sint mollitia libero dolor repellat magni vel architecto distinctio quae a nulla officia iste eaque praesentium in debitis laudantium eveniet. Aspernatur, ipsam dolorem. Mollitia praesentium culpa voluptate dolorem, porro repudiandae nam eligendi. Possimus, similique ratione. Voluptatum nisi debitis nemo. Unde enim molestias dolore odio optio quibusdam impedit aliquam voluptas beatae recusandae sunt, inventore, porro, provident illo et necessitatibus corrupti iste ullam?
-      </div>
+
         </Main>
 
     </>

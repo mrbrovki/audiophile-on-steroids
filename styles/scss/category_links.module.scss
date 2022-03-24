@@ -1,4 +1,5 @@
 @import "variables";
+@import "responsive";
 
 .categories {
   display: grid;
@@ -22,6 +23,10 @@
     overflow: visible;
     border-radius: 10px;
     text-transform: uppercase;
+
+    &:hover {
+      box-shadow: 0 0 10px #a7a7a7;
+    }
 
     .image {
       position: absolute;
@@ -59,5 +64,12 @@
   }
   100% {
     transform: translateX(0.1rem);
+  }
+}
+
+@include tablet {
+  .categories {
+    grid-template-columns: 1fr;
+    grid-gap: 5rem;
   }
 }

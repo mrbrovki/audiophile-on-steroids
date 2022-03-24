@@ -34,6 +34,11 @@
   text-transform: uppercase;
 }
 
+.categories .category:hover {
+  -webkit-box-shadow: 0 0 10px #a7a7a7;
+          box-shadow: 0 0 10px #a7a7a7;
+}
+
 .categories .category .image {
   position: absolute;
   top: -60px;
@@ -91,6 +96,14 @@
   100% {
     -webkit-transform: translateX(0.1rem);
             transform: translateX(0.1rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  .categories {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 5rem;
   }
 }
 /*# sourceMappingURL=category_links.module.css.map */

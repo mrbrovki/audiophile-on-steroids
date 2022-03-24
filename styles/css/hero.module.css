@@ -1,5 +1,4 @@
 .hero .hero_h1 {
-  overflow: hidden;
   width: 500px;
   font-size: 4rem;
   line-height: 4rem;
@@ -60,6 +59,22 @@
   }
   .hero .hero_p {
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero .hero_h1 {
+    font-size: 8vw;
+    width: 80vw;
+    line-height: 2.7rem;
+  }
+  .hero .hero_h1::before {
+    font-size: 1rem;
+    color: #787878;
+  }
+  .hero .hero_p {
+    font-size: 0.8rem;
+    width: 15rem;
   }
 }
 /*# sourceMappingURL=hero.module.css.map */
