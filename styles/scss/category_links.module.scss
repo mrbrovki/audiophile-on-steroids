@@ -1,0 +1,63 @@
+@import "variables";
+
+.categories {
+  display: grid;
+  margin-top: 8rem;
+  grid-gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  overflow: visible;
+  background-color: $main-bg-clr;
+
+  .category {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    position: relative;
+    overflow: visible;
+    border-radius: 10px;
+    text-transform: uppercase;
+
+    .image {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .cat_name {
+      margin: 6.5rem 0 1rem;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: black;
+    }
+    .shop {
+      color: #656464;
+      position: relative;
+      width: 4rem;
+      text-align: center;
+      .arrow {
+        display: inline-block;
+        position: absolute;
+        animation: arrow-anim 2s infinite;
+        top: 0.1rem;
+      }
+    }
+  }
+}
+
+@keyframes arrow-anim {
+  0% {
+    transform: translateX(0.1rem);
+  }
+  50% {
+    transform: translateX(0.5rem);
+  }
+  100% {
+    transform: translateX(0.1rem);
+  }
+}

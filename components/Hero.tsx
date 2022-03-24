@@ -11,9 +11,10 @@ const Hero = () => {
       <p className={styles.hero_p}>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
       <div className={styles.bg_pic}>
         <Image src={'/assets/home/tablet/image-header.jpg'} layout='fill' 
-        quality={100}
+        quality={90}
         objectFit={'contain'}
         objectPosition={'center right'}
+        priority={true}
       />
       </div>
       <SeeProduct href={'/categories/headphones/4'} bg={'orange'}/>
