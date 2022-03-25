@@ -8,7 +8,7 @@ interface ContextParams extends ParsedUrlQuery{
 };
 
 export const getStaticPaths:GetStaticPaths = async () =>{
- const res = await fetch('https://api.jsonbin.io/b/623de5f07caf5d678371f235');
+ const res = await fetch('https://api.jsonbin.io/b/623e21e2a703bb674934a6cb');
  const data = await res.json() as ContextParams[];
  const paths = data.map(product =>{
   return{

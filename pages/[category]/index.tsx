@@ -1,9 +1,14 @@
 import React from 'react';
 import type { NextPage, GetStaticProps, GetStaticPaths} from 'next';
 import { ParsedUrlQuery } from 'querystring';
-
+import { categories } from '../../public/categories';
+import Main from '../../components/Main';
+import Image from 'next/image';
+// styles
 import styles from '../../styles/css/category.module.css';
+import SeeProduct from '../../components/SeeProduct';
 
+//types
 interface ContextParams extends ParsedUrlQuery{
   category: string;
 };
@@ -17,11 +22,8 @@ interface CategoryProduct{
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const categories = ["headphones", "speakers", "earphones"];
-  const paths = categories.map(ctg =>{
-    return{
-       params: {category: ctg}
-    };
+  const paths = categories.map(category =>{
+    return{params: {category: category}};
   });
   return{
     paths,
@@ -30,23 +32,40 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps:GetStaticProps = async (context) => {
+  const res = await fetch('https://api.jsonbin.io/b/623e21e2a703bb674934a6cb');
+  const data:Array<ContextParams> = await res.json();
   const {category} = context.params as ContextParams;
-  const res = await fetch('https://api.jsonbin.io/b/623de5f07caf5d678371f235');
-  const data = await res.json() as Array<{category: string}>;
-  const catProducts = data.filter(product => product.category === category);
-  return {props: {data: catProducts, category: category}}
+  const filtData = data.filter(product => product.category === category);
+  return {props: {data: filtData, category: category}};
 };
 
-const Category:NextPage<{data: CategoryProduct[], category: string}> = ({data, category}) => {
+const Category:NextPage<{data: CategoryProduct[]} & ContextParams> = ({data, category}) => {
+  const products = data.map(product =>{
+    return(
+      <div className={styles.grid_container}>
+            <div className={styles.image}>
+              <Image src={product.image.desktop} layout='fill' objectFit='contain'/>
+            </div>
+            <div className={styles.info}>
+              <p className={styles.new_product}>new product</p>
+              <h2 className={styles.name}>{product.name}</h2>
+              <p className={styles.description}>{product.description}</p>
+              <SeeProduct href={'/headphones/xx59-headphones'} bg={'orange'}/>
+            </div>
+      </div>
+    );
+  });
   return (
-    <main>
+    <>
       <h1 className={styles.category_h1}>
         {category}
       </h1>
-      <div className={styles.lorem}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eaque quod quas vel quis labore at aut amet nemo sapiente, ratione adipisci sunt nostrum sit modi nihil quaerat ullam autem quam. Doloremque quisquam odio porro, nemo odit vitae voluptates sint mollitia libero dolor repellat magni vel architecto distinctio quae a nulla officia iste eaque praesentium in debitis laudantium eveniet. Aspernatur, ipsam dolorem. Mollitia praesentium culpa voluptate dolorem, porro repudiandae nam eligendi. Possimus, similique ratione. Voluptatum nisi debitis nemo. Unde enim molestias dolore odio optio quibusdam impedit aliquam voluptas beatae recusandae sunt, inventore, porro, provident illo et necessitatibus corrupti iste ullam?
-      </div>
-    </main>
+      <Main>
+        <section>
+          {products}
+        </section>
+      </Main>
+    </>
   );
 };
 
