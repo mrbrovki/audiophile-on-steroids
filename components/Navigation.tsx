@@ -25,7 +25,7 @@ const Navigation:FC<NavProps> = ({toggleNav, showNav, closeNav}) => {
            return(
             <li key={category} className={styles.nav_link}>
              <Link href={{
-               pathname: '/categories/[category]',
+               pathname: '/[category]',
                query: {category: category}
               }}>
               <a onClick={closeNav}>{category}</a>

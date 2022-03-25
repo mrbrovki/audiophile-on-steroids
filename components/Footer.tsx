@@ -15,7 +15,7 @@ const Footer = () => {
       <ul className={styles.links}>
        {categories.map(catName =>
         <li key={catName} className={styles.link}>
-         <Link href={'/categories/' + catName}>
+         <Link href={'/' + catName}>
           <a>{catName}</a>
          </Link>
         </li>

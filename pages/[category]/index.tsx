@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NextPage, GetStaticProps, GetStaticPaths} from 'next';
-import { categories } from '../../public/categories';
 import { ParsedUrlQuery } from 'querystring';
+
 import styles from '../../styles/css/category.module.css';
 
 interface ContextParams extends ParsedUrlQuery{
@@ -17,6 +17,7 @@ interface CategoryProduct{
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const categories = ["headphones", "speakers", "earphones"];
   const paths = categories.map(ctg =>{
     return{
        params: {category: ctg}
@@ -30,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps:GetStaticProps = async (context) => {
   const {category} = context.params as ContextParams;
-  const res = await fetch('https://jsonkeeper.com/b/H28U');
+  const res = await fetch('https://api.jsonbin.io/b/623de5f07caf5d678371f235');
   const data = await res.json() as Array<{category: string}>;
   const catProducts = data.filter(product => product.category === category);
   return {props: {data: catProducts, category: category}}

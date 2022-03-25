@@ -7,7 +7,7 @@ import styles from '../styles/css/category_links.module.css';
 const CategoryLinks = () => {
  const catLinks = categories.map((category, index) => {
   return(
-    <Link href={'/categories/'+ category} key={index}>
+    <Link href={'/' + category} key={index}>
       <a className={styles.category}>
        <div className={styles.image}>
         <Image src={`/assets/shared/desktop/image-${category}.png`} 

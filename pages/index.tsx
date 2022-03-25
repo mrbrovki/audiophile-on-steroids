@@ -45,12 +45,12 @@ const Home: NextPage<{data: Data[]}> = ({data}) => {
               <div className={styles.zx9_info}>
                 <h2>zx9 speaker</h2>
                 <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                <SeeProduct href={'/categories/speakers/zx9-speaker'} bg={'black'}/>
+                <SeeProduct href={'/speakers/zx9-speaker'} bg={'black'}/>
               </div>
             </div>
             <div className={styles.zx7}>
               <h3>zx7 speaker</h3>
-              <SeeProduct href={'/categories/speakers/zx7-speaker'} bg={'transparent'}/>
+              <SeeProduct href={'/speakers/zx7-speaker'} bg={'transparent'}/>
               <Image src={'/assets/home/tablet/image-speaker-zx7.jpg'} layout={'fill'} objectFit={'cover'} objectPosition={'left'} quality={80}/>
             </div>
             <div className={styles.yx1}>
@@ -59,7 +59,7 @@ const Home: NextPage<{data: Data[]}> = ({data}) => {
               </div>
               <div className={styles.yx1_info}>
                 <h3>yx1 earphones</h3>
-                <SeeProduct href={'/categories/earphones/yx1-earphones'} bg={'transparent'}/>
+                <SeeProduct href={'/earphones/yx1-earphones'} bg={'transparent'}/>
               </div>
             </div>
           </section>
