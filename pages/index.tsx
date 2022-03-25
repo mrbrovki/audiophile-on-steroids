@@ -7,6 +7,7 @@ import styles from '../styles/css/home.module.css';
 import SeeProduct from '../components/SeeProduct';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import Gear from '../components/Gear';
 
 interface Data{
   name: string;
@@ -62,30 +63,11 @@ const Home: NextPage<{data: Data[]}> = ({data}) => {
               </div>
             </div>
           </section>
+          <Gear />
         </Main>
 
     </>
   )
 }
 
-export default Home
-
-{/* <section className='products'>
-      <section className={'zx9 zx9-' + responsive}>
-        <h1>zx9 speaker</h1>
-        <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-        <Link to='/speakers/6' className='btn black'>SEE PRODUCT</Link>
-      </section>
-      <section className={'zx7 zx7-' + responsive}>
-        <h2>zx7 speaker</h2>
-        <Link to='/speakers/5' className='btn transparent'>SEE PRODUCT</Link>
-      </section>
-      <section className={'grid-container grid-container-' + responsive}>
-        <section className={'yx1-image-' + responsive}>
-        </section>
-        <section className={'yx1 yx1-' + responsive}>
-        <h2>yx1 earphones</h2>
-        <Link to='/earphones/1' className='btn transparent'>SEE PRODUCT</Link>
-        </section>
-      </section>
-    </section> */}
+export default Home;

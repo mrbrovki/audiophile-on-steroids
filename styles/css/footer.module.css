@@ -19,11 +19,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 25rem;
   text-transform: uppercase;
 }
 
 .footer .links .link {
+  margin-left: 1rem;
   list-style-type: none;
 }
 
@@ -37,9 +37,9 @@
   clear: both;
   margin-top: 4rem;
   color: #5f5f5f;
-  width: 35rem;
   font-weight: 500;
   line-height: 1.2rem;
+  width: 30rem;
 }
 
 .footer .copyright {
@@ -56,5 +56,34 @@
 .footer .social_icons li {
   display: inline-block;
   margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .footer .logo {
+    width: 100%;
+    text-align: center;
+  }
+  .footer .links {
+    margin-left: -2.5rem;
+    display: block;
+    text-align: center;
+    float: none;
+  }
+  .footer .links .link {
+    margin-left: 0;
+  }
+  .footer .description {
+    text-align: center;
+    width: 100%;
+  }
+  .footer .copyright {
+    text-align: center;
+    float: none;
+  }
+  .footer .social_icons {
+    float: none;
+    text-align: center;
+    margin-left: -2.5rem;
+  }
 }
 /*# sourceMappingURL=footer.module.css.map */
