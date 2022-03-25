@@ -73,3 +73,8 @@
     grid-gap: 5rem;
   }
 }
+@include mobile {
+  .categories {
+    margin-top: 1rem;
+  }
+}

@@ -106,4 +106,10 @@
     grid-gap: 5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .categories {
+    margin-top: 1rem;
+  }
+}
 /*# sourceMappingURL=category_links.module.css.map */

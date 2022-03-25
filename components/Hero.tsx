@@ -17,7 +17,7 @@ const Hero = () => {
         priority={true}
       />
       </div>
-      <SeeProduct href={'/categories/headphones/4'} bg={'orange'}/>
+      <SeeProduct href={'/categories/headphones/xx99-mark-two-headphones'} bg={'orange'}/>
     </div>
   );
 };

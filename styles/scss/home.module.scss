@@ -1,0 +1,167 @@
+@import "variables";
+@import "responsive";
+
+.home_products {
+  .zx9 {
+    margin-top: 4rem;
+    background-color: $zx9-bg-clr;
+    height: 30rem;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 6rem;
+    overflow: hidden;
+    position: relative;
+
+    .circles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: -11rem;
+      left: -17rem;
+    }
+    .zx9_image {
+      position: relative;
+    }
+    .zx9_info {
+      position: absolute;
+      width: 19rem;
+      left: 30rem;
+      top: 8rem;
+
+      h2 {
+        color: $zx9-h2-clr;
+        text-transform: uppercase;
+        font-size: 4.5rem;
+        font-weight: 400;
+        line-height: 4rem;
+        margin: 0;
+      }
+      p {
+        color: $zx9-p-clr;
+        letter-spacing: 0.1rem;
+      }
+      a {
+        margin: 0;
+      }
+    }
+  }
+  .zx7 {
+    position: relative;
+    margin-top: 3rem;
+    height: 25rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    h3 {
+      position: absolute;
+      text-transform: uppercase;
+      font-size: 2rem;
+      left: 4rem;
+      top: 30%;
+      z-index: 1;
+    }
+    a {
+      position: absolute;
+      z-index: 1;
+      left: 4rem;
+      top: 50%;
+      margin: 0;
+    }
+  }
+  .yx1 {
+    height: 20rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 20rem;
+    margin-top: 2rem;
+    .yx1_image {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    .yx1_info {
+      background-color: #f1f1f1;
+      border-radius: 1rem;
+      padding: 5rem 3rem;
+      h3 {
+        text-transform: uppercase;
+      }
+      a {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .home_products {
+    .zx9 {
+      height: 60rem;
+      .circles {
+        top: -5rem;
+        left: 0;
+      }
+      .zx9_image {
+        text-align: center;
+      }
+      .zx9_info {
+        top: 35rem;
+        left: calc(50% - 9.5rem);
+        h2 {
+          text-align: center;
+        }
+        p {
+          text-align: center;
+        }
+        a {
+          margin: 0 auto;
+        }
+      }
+    }
+    .zx7 {
+      height: 20rem;
+      h3 {
+        top: 20%;
+      }
+      a {
+        top: 50%;
+      }
+    }
+  }
+}
+@include mobile {
+  .home_products {
+    .zx9 {
+      height: 45rem;
+      padding: 2rem 6rem;
+      .circles {
+        top: 0;
+      }
+      .zx9_info {
+        top: 28rem;
+
+        h2 {
+          line-height: 2.5rem;
+          font-size: 3rem;
+        }
+      }
+    }
+    .zx7 {
+      height: 15rem;
+      h3 {
+        font-size: 1.5rem;
+        left: 1.5rem;
+      }
+      a {
+        left: 1.5rem;
+      }
+    }
+    .yx1 {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 12rem;
+      .yx1_info {
+        padding-top: 2rem;
+      }
+    }
+  }
+}

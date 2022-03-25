@@ -1,10 +1,29 @@
-import Main from '../components/Main'
-import Head from 'next/head'
-import CategoryLinks from '../components/CategoryLinks'
-import Hero from '../components/Hero'
-import { NextPage } from 'next'
-const Home: NextPage = () => {
-  return (
+import Main from '../components/Main';
+import Head from 'next/head';
+import CategoryLinks from '../components/CategoryLinks';
+import Hero from '../components/Hero';
+import { NextPage } from 'next';
+import styles from '../styles/css/home.module.css';
+import SeeProduct from '../components/SeeProduct';
+import { GetStaticProps } from 'next';
+import Image from 'next/image';
+
+interface Data{
+  name: string;
+  slug: string;
+  image: {
+    desktop: string;
+  };
+  description: string;
+};
+
+export const getStaticProps:GetStaticProps = async () =>{
+  const res = await fetch('https://jsonkeeper.com/b/H28U');
+  const data = await res.json();
+  return {props: {data}};
+}
+const Home: NextPage<{data: Data[]}> = ({data}) => {
+   return (
     <>
       <Head>
         <title>Create Next App</title>
@@ -14,7 +33,35 @@ const Home: NextPage = () => {
         <Hero />
         <Main>
           <CategoryLinks />
-
+          <section className={styles.home_products}>
+            <div className={styles.zx9}>
+              <div className={styles.circles}>
+                <Image src={'/assets/home/desktop/pattern-circles.svg'} layout={'responsive'} width={1} height={1}/>
+              </div>
+              <div className={styles.zx9_image}>
+                <Image src={'/assets/home/desktop/image-speaker-zx9.png'} width={300} height={400}/>
+              </div>
+              <div className={styles.zx9_info}>
+                <h2>zx9 speaker</h2>
+                <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+                <SeeProduct href={'/categories/speakers/zx9-speaker'} bg={'black'}/>
+              </div>
+            </div>
+            <div className={styles.zx7}>
+              <h3>zx7 speaker</h3>
+              <SeeProduct href={'/categories/speakers/zx7-speaker'} bg={'transparent'}/>
+              <Image src={'/assets/home/tablet/image-speaker-zx7.jpg'} layout={'fill'} objectFit={'cover'} objectPosition={'left'} quality={80}/>
+            </div>
+            <div className={styles.yx1}>
+              <div className={styles.yx1_image}>
+                <Image src={'/assets/home/tablet/image-earphones-yx1.jpg'} layout={'fill'} objectFit={'cover'} />
+              </div>
+              <div className={styles.yx1_info}>
+                <h3>yx1 earphones</h3>
+                <SeeProduct href={'/categories/earphones/yx1-earphones'} bg={'transparent'}/>
+              </div>
+            </div>
+          </section>
         </Main>
 
     </>
@@ -22,3 +69,23 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+{/* <section className='products'>
+      <section className={'zx9 zx9-' + responsive}>
+        <h1>zx9 speaker</h1>
+        <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+        <Link to='/speakers/6' className='btn black'>SEE PRODUCT</Link>
+      </section>
+      <section className={'zx7 zx7-' + responsive}>
+        <h2>zx7 speaker</h2>
+        <Link to='/speakers/5' className='btn transparent'>SEE PRODUCT</Link>
+      </section>
+      <section className={'grid-container grid-container-' + responsive}>
+        <section className={'yx1-image-' + responsive}>
+        </section>
+        <section className={'yx1 yx1-' + responsive}>
+        <h2>yx1 earphones</h2>
+        <Link to='/earphones/1' className='btn transparent'>SEE PRODUCT</Link>
+        </section>
+      </section>
+    </section> */}
