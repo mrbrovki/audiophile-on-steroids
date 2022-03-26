@@ -6,6 +6,7 @@ import Main from '../../components/Main';
 import Image from 'next/image';
 // styles
 import styles from '../../styles/css/product.module.css';
+import Counter from '../../components/Counter';
 
 
 interface ContextParams extends ParsedUrlQuery{
@@ -76,6 +77,7 @@ const Product:NextPage<{product: ProductProps}> = ({product}) => {
           <h1 className={styles.name}>{product.name}</h1>
           <p className={styles.description}>{product.description}</p>
           <p className={styles.price}>${product.price}</p>
+          <Counter />
         </div>
       </section>
     </div>

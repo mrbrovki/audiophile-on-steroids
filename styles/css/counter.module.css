@@ -1,0 +1,62 @@
+.flex_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.flex_container .counter_container {
+  background-color: #f1f1f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 7rem;
+  height: 3rem;
+  padding: 0 1rem;
+  border-radius: 0.3rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.flex_container .counter_container .sign {
+  color: #9a9a9a;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.flex_container .counter_container .sign:hover {
+  cursor: pointer;
+}
+
+.flex_container .counter_container .amount {
+  font-size: 1.5rem;
+  width: 3rem;
+  text-align: center;
+}
+
+.flex_container .add_to_cart_btn {
+  margin-left: 1rem;
+  background-color: #ee7433;
+  opacity: 0.8;
+  width: 10rem;
+  line-height: 3rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.flex_container .add_to_cart_btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+/*# sourceMappingURL=counter.module.css.map */

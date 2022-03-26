@@ -51,7 +51,7 @@ const Category:NextPage<{data: CategoryProduct[]} & ContextParams> = ({data, cat
               <p className={styles.new_product}>new product</p>
               <h2 className={styles.name}>{product.name}</h2>
               <p className={styles.description}>{product.description}</p>
-              <SeeProduct href={'/headphones/xx59-headphones'} bg={'orange'}/>
+              <SeeProduct href={`/${[product.category]}/${product.slug}`} bg={'orange'}/>
             </div>
       </div>
     );
