@@ -13,7 +13,7 @@ const Cart:FC<CartProps> = ({toggleCart, closeCart, showCart}) => {
   return (
    <>
     <div className={styles.cart_clicker} onClick={toggleCart}>
-      <Image className={styles.cart_icon} src='/assets/shared/desktop/icon-cart.svg' height={24} width={24}/>
+      <Image className={styles.cart_icon} src='/assets/shared/desktop/icon-cart.svg' height={24} width={24} alt='cart'/>
       {showCart && <CartItems />}
      </div>
    </>

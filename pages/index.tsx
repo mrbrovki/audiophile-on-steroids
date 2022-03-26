@@ -37,7 +37,7 @@ const Home: NextPage<{data: Data[]}> = ({data}) => {
           <section className={styles.home_products}>
             <div className={styles.zx9}>
               <div className={styles.circles}>
-                <Image src={'/assets/home/desktop/pattern-circles.svg'} layout={'responsive'} width={1} height={1}/>
+                <Image src={'/assets/home/desktop/pattern-circles.svg'} layout={'responsive'} width={1} height={1} alt='circles'/>
               </div>
               <div className={styles.zx9_image}>
                 <Image src={'/assets/home/desktop/image-speaker-zx9.png'} width={300} height={400} alt='item'/>

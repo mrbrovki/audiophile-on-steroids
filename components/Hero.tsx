@@ -15,6 +15,7 @@ const Hero = () => {
         objectFit={'contain'}
         objectPosition={'center right'}
         priority={true}
+        alt='hero'
       />
       </div>
       <SeeProduct href={'/headphones/xx99-mark-two-headphones'} bg={'orange'}/>

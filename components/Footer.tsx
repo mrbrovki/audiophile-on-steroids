@@ -28,7 +28,7 @@ const Footer = () => {
       </ul>
      </nav>
 
-     <p className={styles.description}>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility-we're open 7 days a week.</p>
+     <p className={styles.description}>Audiophile is an all in one stop to fulfill your audio needs. We&#39;re a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility-we&#39;re open 7 days a week.</p>
 
      <p className={styles.copyright}>Copyright 2022. All Rights Reserved</p>
 
@@ -40,6 +40,7 @@ const Footer = () => {
           layout='fixed'
           width={32}
           height={32}
+          alt='icon'
          />
         </a>
        </Link>
@@ -51,6 +52,7 @@ const Footer = () => {
           layout='fixed'
           width={32}
           height={32}
+          alt='icon'
          />
         </a>
        </Link>
@@ -62,6 +64,7 @@ const Footer = () => {
           layout='fixed'
           width={32}
           height={32}
+          alt='icon'
          />
         </a>
        </Link>
