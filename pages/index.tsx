@@ -32,7 +32,7 @@ const Home: NextPage<{data: Data[]}> = ({data}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Hero />
-        <Main>
+        <Main marginTop={'25rem'}>
           <CategoryLinks />
           <section className={styles.home_products}>
             <div className={styles.zx9}>

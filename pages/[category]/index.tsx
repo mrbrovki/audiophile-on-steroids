@@ -14,6 +14,7 @@ interface ContextParams extends ParsedUrlQuery{
 };
 
 interface CategoryProduct{
+  id: number;
   slug: string;
   name: string;
   image: {desktop: string;};
@@ -42,7 +43,7 @@ export const getStaticProps:GetStaticProps = async (context) => {
 const Category:NextPage<{data: CategoryProduct[]} & ContextParams> = ({data, category}) => {
   const products = data.map(product =>{
     return(
-      <div className={styles.grid_container}>
+      <div className={styles.grid_container} key={product.id}>
             <div className={styles.image}>
               <Image src={product.image.desktop} layout='fill' objectFit='contain'/>
             </div>
@@ -60,7 +61,7 @@ const Category:NextPage<{data: CategoryProduct[]} & ContextParams> = ({data, cat
       <h1 className={styles.category_h1}>
         {category}
       </h1>
-      <Main>
+      <Main marginTop='20rem'>
         <section>
           {products}
         </section>
