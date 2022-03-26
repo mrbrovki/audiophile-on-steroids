@@ -34,6 +34,11 @@
   width: 80vw;
 }
 
+.header .desktop_logo,
+.header .tb_mb_logo {
+  margin-top: 0.5rem;
+}
+
 .header .tb_mb_logo {
   display: none;
 }

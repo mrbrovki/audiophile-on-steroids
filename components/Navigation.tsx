@@ -2,6 +2,7 @@ import React, {FC} from 'react'
 import { categories } from '../public/categories';
 import Link from 'next/link';
 import styles from '../styles/css/navigation.module.css';
+import Image from 'next/image';
 
 interface NavProps{
   toggleNav: () => void;
@@ -12,7 +13,9 @@ interface NavProps{
 const Navigation:FC<NavProps> = ({toggleNav, showNav, closeNav}) => {
   return (
     <>
-      <img src='/assets/shared/tablet/icon-hamburger.svg' className={styles.hamburger} alt='ham' onClick={toggleNav}/>
+      <div className={styles.hamburger} onClick={toggleNav}> 
+        <Image src='/assets/shared/tablet/icon-hamburger.svg' alt='ham'  width={25} height={25}/>
+      </div>
       <nav className={styles.nav_list + ' ' + styles[showNav]}>
        <ul>
         <li className={styles.link}>

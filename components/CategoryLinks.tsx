@@ -14,18 +14,18 @@ const CategoryLinks = () => {
          layout={'fixed'}
          height={200}
          width={220}
+         alt='link'
          />
        </div>
       <div className={styles.cat_name}>{category}</div>
       <div className={styles.shop}>
        <span>shop</span>
        <div className={styles.arrow}>
-        <Image src='/assets/shared/desktop/icon-arrow-right.svg' height={16} width={12}/>
+        <Image src='/assets/shared/desktop/icon-arrow-right.svg' height={16} width={12} alt='arrow'/>
        </div>
       </div>
      </a>
     </Link>
-
   );
  })
 

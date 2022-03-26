@@ -7,6 +7,7 @@ import Image from 'next/image';
 // styles
 import styles from '../../styles/css/product.module.css';
 
+
 interface ContextParams extends ParsedUrlQuery{
   slug: string;
   category: string;
@@ -69,7 +70,7 @@ const Product:NextPage<{product: ProductProps}> = ({product}) => {
       <button onClick={router.back} className={styles.go_back_btn}>Go Back</button>
       <section className={styles.grid_container}>
         <div className={styles.image}>
-          <Image src={product.image.desktop} layout='fill' objectFit='contain'/>
+          <Image src={product.image.desktop} layout='fill' objectFit='contain' alt='item' quality={70} priority={true}/>
         </div>
         <div className={styles.info}>
           <h1 className={styles.name}>{product.name}</h1>

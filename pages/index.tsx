@@ -40,7 +40,7 @@ const Home: NextPage<{data: Data[]}> = ({data}) => {
                 <Image src={'/assets/home/desktop/pattern-circles.svg'} layout={'responsive'} width={1} height={1}/>
               </div>
               <div className={styles.zx9_image}>
-                <Image src={'/assets/home/desktop/image-speaker-zx9.png'} width={300} height={400}/>
+                <Image src={'/assets/home/desktop/image-speaker-zx9.png'} width={300} height={400} alt='item'/>
               </div>
               <div className={styles.zx9_info}>
                 <h2>zx9 speaker</h2>
@@ -51,11 +51,11 @@ const Home: NextPage<{data: Data[]}> = ({data}) => {
             <div className={styles.zx7}>
               <h3>zx7 speaker</h3>
               <SeeProduct href={'/speakers/zx7-speaker'} bg={'transparent'}/>
-              <Image src={'/assets/home/tablet/image-speaker-zx7.jpg'} layout={'fill'} objectFit={'cover'} objectPosition={'left'} quality={80}/>
+              <Image src={'/assets/home/tablet/image-speaker-zx7.jpg'} layout={'fill'} objectFit={'cover'} objectPosition={'left'} quality={80} alt='item'/>
             </div>
             <div className={styles.yx1}>
               <div className={styles.yx1_image}>
-                <Image src={'/assets/home/tablet/image-earphones-yx1.jpg'} layout={'fill'} objectFit={'cover'} />
+                <Image src={'/assets/home/tablet/image-earphones-yx1.jpg'} layout={'fill'} objectFit={'cover'} alt='item'/>
               </div>
               <div className={styles.yx1_info}>
                 <h3>yx1 earphones</h3>

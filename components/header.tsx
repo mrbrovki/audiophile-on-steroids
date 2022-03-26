@@ -1,11 +1,11 @@
-import React, { createRef, FC, useState } from 'react'
+import React, { FC, useState } from 'react'
 import Link from 'next/link';
+import Image from 'next/image';
 // components
 import Cart from './Cart';
 import Navigation from './Navigation';
 // styles
 import styles from '../styles/scss/header.module.scss';
-
 const Header:FC = () => {
   const [isOverlay, setIsOverlay] = useState(false);
   const [showNav, setShowNav] = useState('hidden');
@@ -43,19 +43,18 @@ const Header:FC = () => {
     closeNav();
     closeCart();
   }
-
   return (
     <>
       <header className={styles.header}>
         <Link href={'/'}>
         <a className={styles.desktop_logo}>
-          <img src='/assets/shared/desktop/logo.svg' alt='logo' />
+          <Image src='/assets/shared/desktop/logo.svg' alt='logo' width={160} height={32}/>
         </a>
         </Link>
         <Navigation toggleNav={toggleNav} showNav={showNav} closeNav={closeNav}/>
         <Link href={'/'}>
         <a className={styles.tb_mb_logo}>
-          <img src='/assets/shared/desktop/logo.svg' alt='logo' />
+          <Image src='/assets/shared/desktop/logo.svg' alt='logo' width={160} height={32}/>
         </a>
         </Link>
         <Cart toggleCart={toggleCart} showCart={showCart} closeCart={closeCart}/>

@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className={styles.footer}>
      <Link href={'/'}>
       <a className={styles.logo}>
-       <img src='/assets/shared/desktop/logo.svg' alt='logo' />
+       <Image src='/assets/shared/desktop/logo.svg' alt='logo' width={160} height={32}/>
       </a>
      </Link>
      <nav>
