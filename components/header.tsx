@@ -5,8 +5,9 @@ import Image from 'next/image';
 import Cart from './Cart';
 import Navigation from './Navigation';
 // styles
-import styles from '../styles/scss/header.module.scss';
-const Header:FC = () => {
+import styles from '../styles/css/header.module.css';
+
+const Header = () => {
   const [isOverlay, setIsOverlay] = useState(false);
   const [showNav, setShowNav] = useState('hidden');
   const [showCart, setShowCart] = useState(false);
@@ -66,4 +67,4 @@ const Header:FC = () => {
   )
 }
 
-export default Header
+export default Header;
