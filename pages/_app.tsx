@@ -1,5 +1,5 @@
 import {createContext, Dispatch, useReducer } from 'react';
-import Layout from './layout';
+import Layout from '../components/layout';
 import type { AppProps } from 'next/app';
 import '../styles/css/globals.css';
 

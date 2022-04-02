@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react'
 import { ParsedUrlQuery } from 'querystring';
 import { useRouter } from 'next/router';
@@ -16,7 +16,7 @@ interface ContextParams extends ParsedUrlQuery{
 
 interface ProductProps{
   name: string;
-  image: {desktop: string;};
+  image: {desktop: string};
   description: string;
   new: boolean;
   price: number;
@@ -41,7 +41,7 @@ interface ProductProps{
 };
 
 export const getStaticPaths:GetStaticPaths = async () =>{
- const res = await fetch('https://api.jsonbin.io/b/623e21e2a703bb674934a6cb');
+ const res = await fetch('https://my-json-server.typicode.com/mrbrovki/demo/all');
  const data = await res.json() as ContextParams[];
  const paths = data.map(product =>{
   return{
@@ -55,28 +55,28 @@ export const getStaticPaths:GetStaticPaths = async () =>{
 };
 
 export const getStaticProps:GetStaticProps= async (context) =>{
- const {slug} = context.params as ContextParams;
- const res = await fetch('https://api.jsonbin.io/b/623e21e2a703bb674934a6cb');
- const data = await res.json() as ContextParams[];
- const index = data.findIndex(product => product.slug === slug);
- return {props: {product: data[index]}};
+ const {slug, category} = context.params as ContextParams;
+ const res = await fetch(`https://my-json-server.typicode.com/mrbrovki/demo/${category}?slug=${slug}`);
+ const productProps = await res.json();
+ return{
+   props: {productProps: productProps[0]}
+ }
 };
 
-const Product:NextPage<{product: ProductProps}> = ({product}) => {
+const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
   const router = useRouter();
-
   return (
     <Main marginTop='0rem'>
     <div className={styles.product_container}>
       <button onClick={router.back} className={styles.go_back_btn}>Go Back</button>
       <section className={styles.grid_container}>
         <div className={styles.image}>
-          <Image src={product.image.desktop} layout='fill' objectFit='contain' alt='item' quality={70} priority={true}/>
+          <Image src={productProps.image.desktop} layout='fill' objectFit='contain' alt='item' quality={70} priority={true}/>
         </div>
         <div className={styles.info}>
-          <h1 className={styles.name}>{product.name}</h1>
-          <p className={styles.description}>{product.description}</p>
-          <p className={styles.price}>${product.price}</p>
+          <h1 className={styles.name}>{productProps.name}</h1>
+          <p className={styles.description}>{productProps.description}</p>
+          <p className={styles.price}>${productProps.price}</p>
           <Counter />
         </div>
       </section>

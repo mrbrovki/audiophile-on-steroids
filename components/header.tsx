@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 // components
@@ -7,7 +7,7 @@ import Navigation from './Navigation';
 // styles
 import styles from '../styles/css/header.module.css';
 
-const Header = () => {
+const Header:FC = () => {
   const [isOverlay, setIsOverlay] = useState(false);
   const [showNav, setShowNav] = useState('hidden');
   const [showCart, setShowCart] = useState(false);

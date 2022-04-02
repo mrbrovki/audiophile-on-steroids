@@ -33,14 +33,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps:GetStaticProps = async (context) => {
-  const res = await fetch('https://api.jsonbin.io/b/623e21e2a703bb674934a6cb');
-  const data:Array<ContextParams> = await res.json();
   const {category} = context.params as ContextParams;
-  const filtData = data.filter(product => product.category === category);
-  return {props: {data: filtData, category: category}};
+  const res = await fetch(`https://my-json-server.typicode.com/mrbrovki/demo/${category}`);
+  const data = await res.json();
+  return {props: {data}};
 };
 
-const Category:NextPage<{data: CategoryProduct[]} & ContextParams> = ({data, category}) => {
+const Category:NextPage<{data: CategoryProduct[]}> = ({data}) => {
   const products = data.map(product =>{
     return(
       <div className={styles.grid_container} key={product.id}>
@@ -59,7 +58,7 @@ const Category:NextPage<{data: CategoryProduct[]} & ContextParams> = ({data, cat
   return (
     <>
       <h1 className={styles.category_h1}>
-        {category}
+        {data[0].category}
       </h1>
       <Main marginTop='20rem'>
         <section>

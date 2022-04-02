@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, {FC} from 'react';
 import { categories } from '../public/categories';
 import Link from 'next/link';
 import styles from '../styles/css/navigation.module.css';
