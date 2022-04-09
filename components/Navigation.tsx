@@ -77,7 +77,7 @@ const Navigation:FC<NavProps> = ({navType}) => {
               }
             </ul>      
           </nav>
-          <p className={styles.company_info}>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility-we're open 7 days a week.</p>
+          <p className={styles.company_info}>Audiophile is an all in one stop to fulfill your audio needs. We&#39;re a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility-we&#39;re open 7 days a week.</p>
           <p className={styles.copyright}>Copyright 2022. All Rights Reserved</p>
           <div className={styles.social}>
             <a href='https://www.facebook.com/' target='_blank' className={styles.social_link}>
