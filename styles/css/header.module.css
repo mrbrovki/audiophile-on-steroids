@@ -10,7 +10,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 0 10% 0 10%;
-  background-color: #191919;
+  background-color: #1A1A1A;
 }
 
 .header_container::after {
