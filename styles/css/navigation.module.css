@@ -29,8 +29,57 @@
           filter: drop-shadow(0 0 10px #fff);
 }
 
+.footer_nav_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer_nav_container .nav_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer_nav_container .nav_list .link {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin: 0 0.5rem;
+  color: #b4b4b4;
+}
+
+.footer_nav_container .nav_list .link:hover a {
+  color: #fff;
+  -webkit-filter: drop-shadow(0 0 10px #fff);
+          filter: drop-shadow(0 0 10px #fff);
+}
+
+.company_info, .copyright {
+  color: #ffffff64;
+  width: 28rem;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.social .social_link {
+  margin: 0 1rem;
+}
+
 @media (max-width: 10240px) {
-  .logo {
+  .header_logo {
+    height: 25px;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1 / 2;
@@ -44,10 +93,20 @@
   .header_nav_container .nav_list .link a {
     color: #b4b4b4;
   }
+  .footer_nav_container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .company_info {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+  }
 }
 
 @media (max-width: 1024px) {
-  .logo {
+  .header_logo {
     margin: 0 auto;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -95,11 +154,38 @@
   .header_nav_container .hidden {
     max-height: 0;
   }
+  .company_info {
+    width: 50%;
+  }
 }
 
 @media (max-width: 768px) {
   .header_nav_container .nav_list {
     left: 0;
+  }
+  .footer_logo {
+    margin: 0 auto;
+  }
+  .footer_nav_container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer_nav_container .nav_list .link {
+    display: block;
+    text-align: center;
+  }
+  .company_info, .copyright {
+    width: 100%;
+    text-align: center;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+  }
+  .social {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 /*# sourceMappingURL=navigation.module.css.map */

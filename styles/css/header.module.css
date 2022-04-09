@@ -27,8 +27,8 @@
 
 @media (max-width: 10240px) {
   .header_container {
-    -ms-grid-columns: 10rem 1fr 1.5rem;
-        grid-template-columns: 10rem 1fr 1.5rem;
+    -ms-grid-columns: 143px 1fr 1.5rem;
+        grid-template-columns: 143px 1fr 1.5rem;
   }
 }
 

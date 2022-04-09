@@ -6,7 +6,7 @@ import Navigation from '../Navigation';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className={styles.footer_container}>
       <Navigation navType='FOOTER'/>
     </footer>
   );

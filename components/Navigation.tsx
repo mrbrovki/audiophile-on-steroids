@@ -22,8 +22,8 @@ const Navigation:FC<NavProps> = ({navType}) => {
       return(
         <>
           <Link href={'/'} passHref>
-            <a className={styles.logo}>
-              <Image src='/assets/shared/desktop/logo.svg' alt='logo' width={160} height={32}/>
+            <a className={styles.header_logo}>
+              <Image src='/assets/shared/desktop/logo.svg' alt='logo' width={143} height={25}/>
             </a>
           </Link>
           <nav className={styles.header_nav_container}>
@@ -39,7 +39,7 @@ const Navigation:FC<NavProps> = ({navType}) => {
                 {categories.map(category =>{
                   return(
                     <li key={category} className={styles.link}>
-                      <Link href={{pathname: '/[category]', query: {category: category}}}>
+                      <Link href={`/${category}`}>
                         <a>{category}</a>
                       </Link>
                     </li>
@@ -54,21 +54,21 @@ const Navigation:FC<NavProps> = ({navType}) => {
       return(
         <>
           <Link href={'/'}>
-            <a>
-              <Image src='/assets/shared/desktop/logo.svg' alt='logo' width={160} height={32}/>
+            <a className={styles.footer_logo}>
+              <Image src='/assets/shared/desktop/logo.svg' alt='logo' width={143} height={25}/>
             </a>
           </Link> 
-          <nav>
-            <ul>
-              <li>
+          <nav className={styles.footer_nav_container}>
+            <ul className={styles.nav_list}>
+              <li className={styles.link}>
                 <Link href={'/'}>
                   <a>home</a>
                 </Link>
                </li>
               {categories.map(category =>{
                   return(
-                    <li key={category}>
-                      <Link href={{pathname: '/[category]', query: {category: category}}}>
+                    <li key={category} className={styles.link}>
+                      <Link href={`/${category}`}>
                         <a>{category}</a>
                       </Link>
                     </li>
@@ -76,7 +76,21 @@ const Navigation:FC<NavProps> = ({navType}) => {
                 })
               }
             </ul>      
-        </nav>        
+          </nav>
+          <p className={styles.company_info}>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility-we're open 7 days a week.</p>
+          <p className={styles.copyright}>Copyright 2022. All Rights Reserved</p>
+          <div className={styles.social}>
+            <a href='https://www.facebook.com/' target='_blank' className={styles.social_link}>
+              <Image src='/assets/shared/desktop/icon-facebook.svg' height={32} width={32} />
+            </a>
+            <a href='https://www.twitter.com/' target='_blank' className={styles.social_link}>
+              <Image src='/assets/shared/desktop/icon-twitter.svg' height={32} width={32} />
+            </a>
+            <a href='https://www.instagram.com/' target='_blank' className={styles.social_link}>
+              <Image src='/assets/shared/desktop/icon-instagram.svg' height={32} width={32} />
+            </a>
+
+          </div>
         </>
       );
     default: 
