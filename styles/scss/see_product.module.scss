@@ -15,6 +15,7 @@
   color: #fff;
   border: none;
   background-color: #d87c49;
+  
   @include tablet {
     margin: 2rem auto;
   }
@@ -40,6 +41,7 @@
   background-color: black;
   border-color: black;
   color: #fff;
+
   @include tablet {
     margin: 2rem auto;
   }
@@ -72,6 +74,7 @@
     color: white;
     transition: 0.3s;
   }
+
   @include tablet {
     margin: 2rem auto;
   }

@@ -2,12 +2,16 @@ import React from 'react';
 import { categories } from '../public/categories';
 import Link from 'next/link';
 import Image from 'next/image';
+
+//  styles
 import styles from '../styles/css/category_links.module.css';
 
+
+
 const CategoryLinks = () => {
- const catLinks = categories.map((category, index) => {
+  const catLinks = categories.map((category, index) => {
   return(
-    <Link href={'/' + category} key={index}>
+    <Link href={'/' + category} key={index} passHref>
       <a className={styles.category}>
        <div className={styles.image}>
         <Image src={`/assets/shared/desktop/image-${category}.png`} 
@@ -27,13 +31,13 @@ const CategoryLinks = () => {
      </a>
     </Link>
   );
- })
+ });
 
   return (
     <section className={styles.categories}>
      {catLinks}
     </section>
-  )
-}
+  );
+};
 
 export default CategoryLinks;

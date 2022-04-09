@@ -1,4 +1,6 @@
 import React from 'react';
+
+//  styles
 import styles from '../styles/css/cart_items.module.css';
 
 const CartItems = () => {
@@ -6,7 +8,7 @@ const CartItems = () => {
     <div className={styles.cart_items}>
 
     </div>
-  )
-}
+  );
+};
 
-export default CartItems
+export default CartItems;

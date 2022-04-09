@@ -1,13 +1,16 @@
 import React, { FC} from 'react';
-import styles from '../styles/css/cart.module.css';
-import CartItems from './CartItems';
 import Image from 'next/image';
 
-interface CartProps{
-  toggleCart: () => void;
-  closeCart: () => void;
-  showCart: boolean;
-}
+//  components
+import CartItems from './CartItems';
+
+//  types
+import { CartProps } from '../lib/Types';
+
+//  styles
+import styles from '../styles/css/cart.module.css';
+
+
 
 const Cart:FC<CartProps> = ({toggleCart, closeCart, showCart}) => {
   return (
@@ -17,7 +20,7 @@ const Cart:FC<CartProps> = ({toggleCart, closeCart, showCart}) => {
       {showCart && <CartItems />}
      </div>
    </>
-  )
+  );
 };
 
 export default Cart;

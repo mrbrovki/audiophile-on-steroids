@@ -1,40 +1,45 @@
 import {createContext, Dispatch, useReducer } from 'react';
-import Layout from '../components/layout';
 import type { AppProps } from 'next/app';
+//  components
+import Layout from '../components/Layout';
+
+//  types
+import {Action, State} from '../lib/Types';
+
+//  styles
 import '../styles/css/globals.css';
 
-type Action = 
-| {type: "TOTAL", value: number}
-| {type: "PRODUCTS", value: Products};
 
-interface Products{
-  index: number;
-  amount: number;
+const initState: State= {
+  products: [],
+  total: 0,
+  isOverlay: false,
+  navBarVisiblity: 'hidden',
+  cartItemsVisibility: 'hidden'
 };
 
-interface State{
-  products: Array<Products>;
-  total: number;
-};
+export const Context = createContext<{state: State, dispatch: Dispatch<Action>}>({state: initState, dispatch: () => {}});
 
-export const Context = createContext<{state: State, dispatch: Dispatch<Action>} | null>(null);
+const MyApp = ({ Component, pageProps }: AppProps) => {
   
-  
-function MyApp({ Component, pageProps }: AppProps) {
-  const initState: State= {
-    products: [],
-    total: 0
-  };
   const reducer = <T extends State>(state: T, action: Action): T =>{
-    switch(action.type){
+    const {type, payload} = action;
+    switch(type){
       case "TOTAL":
         return {...state, total: state.total};
       case "PRODUCTS":
-        return {...state, products: [...state.products, action.value]};
+        return {...state, products: [...state.products, payload]};
+      case 'OVERLAY':
+        console.log('trigger')
+        return {...state, isOverlay: payload};
+      case "NAVBAR":
+        return {...state, navBarVisiblity: payload};
+      case "CART":
+        return{...state, cartItemsVisibility: payload};
     }
   };
   const [state, dispatch] = useReducer(reducer, initState);
-  
+
   return (
     <Context.Provider value={{state, dispatch}}>
       <Layout>
@@ -42,6 +47,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Layout>
     </Context.Provider>
   );
-}
+};
 
 export default MyApp;

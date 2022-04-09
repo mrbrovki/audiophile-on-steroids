@@ -1,54 +1,36 @@
-@import "responsive";
 @import "variables";
+@import "responsive";
 
-.header {
-  display: flex;
-  position: fixed;
-  top: 0;
-  flex-flow: row nowrap;
-  z-index: 10;
-  background-color: $header-bg-clr;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10vw 0 10vw;
-  width: 100vw;
-  height: 5rem;
-  overflow-y: visible;
+.header_container{
+    display: grid;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    grid-auto-rows: 5rem;
+    width: 100%;
+    align-items: center;
+    padding: 0 10% 0 10%;
+    background-color: $header-bg-clr;
 
-  &::after {
-    content: "";
-    background-color: $header-underline-clr;
-    position: absolute;
-    bottom: 0;
-    height: 1px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 80vw;
-  }
-  .desktop_logo,
-  .tb_mb_logo {
-    margin-top: 0.5rem;
-  }
-
-  .tb_mb_logo {
-    display: none;
-  }
-  @include tablet {
-    .desktop_logo {
-      display: none;
-    }
-    .tb_mb_logo {
-      display: block;
-    }
+    &::after {
+      content: "";
+      background-color: $header-underline-clr;
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 80%;
   }
 }
 
-.overlay {
-  overflow: visible;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #191919b8;
+@include desktop {
+    .header_container{
+        grid-template-columns: 10rem 1fr 1.5rem;
+  }
+}
+@include tablet{
+  .header_container{
+    grid-template-columns: 1.5rem 1fr 1.5rem;
+  }
 }

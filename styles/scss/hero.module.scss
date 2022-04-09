@@ -3,19 +3,19 @@
 .hero {
   #{&}_h1 {
     width: 500px;
-    font-size: 4rem;
     line-height: 4rem;
+    font-size: 4rem;
     font-weight: 500;
     color: #fff;
     text-transform: uppercase;
 
     &::before {
+      content: "NEW PRODUCT";
       display: block;
       color: #414141;
       font-weight: 500;
       letter-spacing: 0.4rem;
       font-size: 1.2rem;
-      content: "NEW PRODUCT";
     }
   }
   #{&}_bg {

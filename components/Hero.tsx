@@ -1,7 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from '../styles/css/hero.module.css';
+
+//  components
 import SeeProduct from './SeeProduct';
+
+//  styles
+import styles from '../styles/css/hero.module.css';
+
+
 
 const Hero = () => {
   return (
@@ -15,7 +21,7 @@ const Hero = () => {
         objectFit={'contain'}
         objectPosition={'center right'}
         priority={true}
-        alt='hero'
+        alt='hero image'
       />
       </div>
       <SeeProduct href={'/headphones/xx99-mark-two-headphones'} bg={'orange'}/>

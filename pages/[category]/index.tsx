@@ -1,26 +1,19 @@
-import React from 'react';
 import type { NextPage, GetStaticProps, GetStaticPaths} from 'next';
-import { ParsedUrlQuery } from 'querystring';
-import { categories } from '../../public/categories';
-import Main from '../../components/Main';
 import Image from 'next/image';
-// styles
-import styles from '../../styles/css/category.module.css';
+import React from 'react';
+
+// types
+import {CategoryContext, CategoryProduct} from '../../lib/Types';
+
+//  components 
+import { categories } from '../../public/categories';
+import Main from '../../components/Layout/Main';
 import SeeProduct from '../../components/SeeProduct';
 
-//types
-interface ContextParams extends ParsedUrlQuery{
-  category: string;
-};
+//  styles
+import styles from '../../styles/css/category.module.css';
 
-interface CategoryProduct{
-  id: number;
-  slug: string;
-  name: string;
-  image: {desktop: string;};
-  description: string;
-  category: string;
-}
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = categories.map(category =>{
@@ -33,11 +26,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps:GetStaticProps = async (context) => {
-  const {category} = context.params as ContextParams;
+  const {category} = context.params as CategoryContext;
   const res = await fetch(`https://my-json-server.typicode.com/mrbrovki/demo/${category}`);
   const data = await res.json();
   return {props: {data}};
 };
+
+
 
 const Category:NextPage<{data: CategoryProduct[]}> = ({data}) => {
   const products = data.map(product =>{
@@ -60,10 +55,10 @@ const Category:NextPage<{data: CategoryProduct[]}> = ({data}) => {
       <h1 className={styles.category_h1}>
         {data[0].category}
       </h1>
-      <Main marginTop='20rem'>
-        <section>
-          {products}
-        </section>
+      <Main marginTop='21rem'>
+          <section>
+            {products}
+          </section>
       </Main>
     </>
   );

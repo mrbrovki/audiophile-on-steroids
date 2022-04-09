@@ -1,28 +1,19 @@
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.header_container {
+  display: -ms-grid;
+  display: grid;
   position: fixed;
-  top: 0;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
   z-index: 10;
-  background-color: #191919;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  top: 0;
+  grid-auto-rows: 5rem;
+  width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 10vw 0 10vw;
-  width: 100vw;
-  height: 5rem;
-  overflow-y: visible;
+  padding: 0 10% 0 10%;
+  background-color: #191919;
 }
 
-.header::after {
+.header_container::after {
   content: "";
   background-color: #ffffff5d;
   position: absolute;
@@ -31,34 +22,20 @@
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  width: 80vw;
+  width: 80%;
 }
 
-.header .desktop_logo,
-.header .tb_mb_logo {
-  margin-top: 0.5rem;
-}
-
-.header .tb_mb_logo {
-  display: none;
+@media (max-width: 10240px) {
+  .header_container {
+    -ms-grid-columns: 10rem 1fr 1.5rem;
+        grid-template-columns: 10rem 1fr 1.5rem;
+  }
 }
 
 @media (max-width: 1024px) {
-  .header .desktop_logo {
-    display: none;
+  .header_container {
+    -ms-grid-columns: 1.5rem 1fr 1.5rem;
+        grid-template-columns: 1.5rem 1fr 1.5rem;
   }
-  .header .tb_mb_logo {
-    display: block;
-  }
-}
-
-.overlay {
-  overflow: visible;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #191919b8;
 }
 /*# sourceMappingURL=header.module.css.map */

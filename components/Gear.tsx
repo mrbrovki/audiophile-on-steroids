@@ -1,6 +1,11 @@
 import React, { FC } from 'react';
-import styles from '../styles/css/gear.module.css';
 import Image from 'next/image';
+
+//styles
+import styles from '../styles/css/gear.module.css';
+
+
+
 const Gear:FC = () => {
   return (
     <div className={styles.gear}>
@@ -12,7 +17,7 @@ const Gear:FC = () => {
       <Image src={'/assets/shared/tablet/image-best-gear.jpg'} layout={'fill'} objectFit={'cover'} alt='gear'/>
      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Gear;

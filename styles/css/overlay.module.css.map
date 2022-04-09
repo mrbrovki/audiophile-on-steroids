@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,QAAQ,CAAC;EACR,QAAQ,EAAE,OAAO;EACjB,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,CAAC;EACN,IAAI,EAAE,CAAC;EACP,OAAO,EAAE,CAAC;EACV,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,gBAAgB,ECOD,SAAS;CDNxB",
+    "sources": [
+        "../scss/overlay.module.scss",
+        "../scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "overlay.module.css"
+}

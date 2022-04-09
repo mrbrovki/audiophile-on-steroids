@@ -1,8 +1,8 @@
-@import "variables";
+@import 'variables';
 
-.main {
-  display: block;
-  padding: 5rem 10%;
-  overflow-x: hidden;
-  background-color: $main-bg-clr;
+.main_container{
+     display: block;
+     padding: 5rem 10%;
+     overflow-x: hidden;
+     background-color: $main-bg-clr;
 }
