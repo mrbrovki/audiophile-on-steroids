@@ -8,6 +8,7 @@ import {CategoryContext, CategoryProduct} from '../../lib/Types';
 //  components 
 import { categories } from '../../public/categories';
 import Main from '../../components/Layout/Main';
+import Hero from '../../components/Hero';
 import SeeProduct from '../../components/SeeProduct';
 
 //  styles
@@ -52,9 +53,9 @@ const Category:NextPage<{data: CategoryProduct[]}> = ({data}) => {
   });
   return (
     <>
-      <h1 className={styles.category_h1}>
+      <Hero type='category'>
         {data[0].category}
-      </h1>
+      </Hero>
       <Main marginTop='21rem'>
           <section>
             {products}

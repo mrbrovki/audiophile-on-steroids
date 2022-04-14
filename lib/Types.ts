@@ -84,3 +84,5 @@ export interface State{
 export interface NavProps{
   navType: string;
 }
+
+export type HeroType = 'home' | 'category';
