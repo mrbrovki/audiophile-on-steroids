@@ -6,6 +6,7 @@
   justify-content: center;
 
   .hamburger{
+
     &:hover{
       cursor: pointer;
     }
@@ -22,6 +23,7 @@
       margin: 0 1rem;
 
       &:hover{
+
         a{
           color: #fff;
           filter: drop-shadow(0 0 10px #fff);
@@ -38,6 +40,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+
     .link {
       display: inline-block;
       text-transform: uppercase;
@@ -45,7 +48,9 @@
       font-size: 0.8rem;
       margin: 0 0.5rem;
       color: $header-navlinks-clr;
+
       &:hover {
+
         a {
           color: #fff;
           filter: drop-shadow(0 0 10px #fff);
@@ -156,6 +161,7 @@
       max-height: 0;
     }    
   }
+
   .company_info {
     width: 50%;
   }
@@ -164,6 +170,7 @@
 @include mobile{
 
   .header_nav_container {
+
     .nav_list {
       left: 0;
     }
@@ -173,7 +180,9 @@
   }
   .footer_nav_container {
     justify-content: center;
+
     .nav_list{
+
       .link{
         display: block;
         text-align: center;
@@ -185,6 +194,7 @@
     text-align: center;
     grid-column: 1 / 2;
   }
+  
   .social{
     justify-content: center;
   }

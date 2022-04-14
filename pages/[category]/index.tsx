@@ -42,7 +42,7 @@ const Category:NextPage<{data: CategoryProduct[]}> = ({data}) => {
               <Image src={product.image.desktop} layout='fill' objectFit='contain' alt='item'/>
             </div>
             <div className={styles.info}>
-              <p className={styles.new_product}>new product</p>
+              <p className={styles.new}>{product.new && 'NEW PRODUCT'}</p>
               <h2 className={styles.name}>{product.name}</h2>
               <p className={styles.description}>{product.description}</p>
               <SeeProduct href={`/${[product.category]}/${product.slug}`} bg={'orange'}/>

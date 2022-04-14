@@ -1,4 +1,6 @@
 @import "variables";
+@import "responsive";
+
 .flex_container {
   display: flex;
   justify-content: flex-start;
@@ -8,18 +10,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 7rem;
     height: 3rem;
     padding: 0 1rem;
     border-radius: 0.3rem;
     user-select: none;
+
     .sign {
       color: $counter-sign-clr;
       transform: scale(1.5);
+
       &:hover {
         cursor: pointer;
       }
     }
+
     .amount {
       font-size: 1.5rem;
       width: 3rem;
@@ -30,15 +34,47 @@
   .add_to_cart_btn {
     margin-left: 1rem;
     background-color: #ee7433;
+    border: none;
     opacity: 0.8;
-    width: 10rem;
     line-height: 3rem;
     color: #fff;
     text-transform: uppercase;
     text-align: center;
+    
     &:hover {
       opacity: 1;
+      box-shadow: 0 0 10px #3838383e;
       cursor: pointer;
+    }
+  }
+}
+
+@include desktop{
+  
+  .flex_container{
+    justify-content: flex-start;
+
+    .counter_container{
+      width: 7rem;
+    }
+
+    .add_to_cart_btn{
+      width: 10rem;
+    }
+  }
+}
+
+@include mobile{
+
+  .flex_container {
+    justify-content: center;
+  
+    .counter_container {
+      width: 7rem;
+    }
+  
+    .add_to_cart_btn {
+      width: 8rem;
     }
   }
 }

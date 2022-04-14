@@ -25,11 +25,13 @@
 }
 
 @include desktop {
+
     .header_container{
         grid-template-columns: 143px 1fr 1.5rem;
   }
 }
 @include tablet{
+  
   .header_container{
     grid-template-columns: 1.5rem 1fr 1.5rem;
   }

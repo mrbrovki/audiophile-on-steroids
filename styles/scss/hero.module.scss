@@ -2,6 +2,7 @@
 @import "variables";
 
 .hero {
+
   #{&}_h1 {
     width: 500px;
     line-height: 4rem;
@@ -19,6 +20,7 @@
       font-size: 1.2rem;
     }
   }
+
   #{&}_bg {
     position: fixed;
     top: 0;
@@ -27,11 +29,13 @@
     height: 60rem;
     background-color: $hero-bg-clr;
   }
+
   #{&}_p {
     width: 20rem;
     font-weight: 100;
     color: #ffffff9e;
   }
+
   .bg_pic {
     position: fixed;
     top: 0;
@@ -40,27 +44,36 @@
     overflow: hidden;
     z-index: -10;
   }
+
   @include desktop {
+
     #{&}_h1 {
       margin: 12rem 0 0 12rem;
     }
+
     #{&}_p {
       margin: 0 12rem;
     }
   }
+
   @include tablet {
+
     #{&}_h1,
     #{&}_p {
       text-align: center;
     }
+
     #{&}_h1 {
       margin: 12rem auto 0;
     }
+
     #{&}_p {
       margin: 0 auto;
     }
   }
+
   @include mobile {
+
     #{&}_h1 {
       font-size: 8vw;
       width: 80vw;
@@ -71,6 +84,7 @@
         color: #787878;
       }
     }
+    
     #{&}_p {
       font-size: 0.8rem;
       width: 15rem;

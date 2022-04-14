@@ -2,6 +2,7 @@
   display: -ms-grid;
   display: grid;
   grid-gap: 2rem;
+  margin-top: 7rem;
 }
 
 .gallery .grid_item_1,

@@ -1,0 +1,47 @@
+@import "responsive";
+@import "variables";
+
+.details_container{
+ margin-top: 7rem;
+ display: grid;
+ grid-template-columns: 1fr 20rem;
+ grid-gap: 10rem;
+
+ .features{
+
+  .features_text{
+   margin: 0;
+   font-size: 1.25rem;
+   color: $clr-grey;
+   white-space: pre-wrap;
+  }
+ }
+
+ .in_the_box{
+  font-size: 1.25rem;
+  font-weight: 600;
+
+  .quantity {
+   color: $clr-orange;
+   margin-right: 1rem;
+  }
+  
+  .item {
+   color: $clr-grey;
+  }
+ }
+}
+
+.section_heading{
+ text-transform: uppercase;
+ font-size: 2rem;
+ font-weight: 600;
+ letter-spacing: 0.2rem;
+ margin: 0;
+}
+
+@include tablet{
+ .details_container{
+  grid-template-columns: 1fr;
+ }
+}

@@ -1,7 +1,7 @@
 .categories {
   display: -ms-grid;
   display: grid;
-  margin-top: 8rem;
+  margin-top: 7rem;
   grid-gap: 40px;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);

@@ -16,16 +16,25 @@
   text-align: center;
 }
 
+.new {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
+  color: #ee8f5cbd;
+}
+
 .grid_container {
   display: grid;
   margin-bottom: 5rem;
   grid-gap: 5rem;
+
   .image {
     position: relative;
     border-radius: 1rem;
     background-color: #f1f1f1;
     height: 40rem;
   }
+
   .info {
     display: flex;
     flex-flow: column nowrap;
@@ -36,12 +45,14 @@
       margin: 0;
       line-height: 3rem;
     }
+
     .description {
       margin: 2rem 0;
       color: #a6a6a6;
       font-size: 1.1rem;
       width: 30rem;
     }
+
     a {
       margin: 0;
     }
@@ -49,22 +60,28 @@
 }
 
 @include desktop {
+
   .grid_container {
+
     &:nth-child(even) {
       grid-template-columns: minmax(10rem, 1fr) minmax(10rem, 1fr);
+
       .image {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
       }
+
       .info {
         grid-column: 1/ 2;
         grid-row: 1 / 2;
         padding-right: 5rem;
+
         .description {
           width: 100%;
         }
       }
     }
+
     &:nth-child(odd) {
       grid-template-columns: minmax(10rem, 1fr) minmax(10rem, 1fr);
 
@@ -72,10 +89,12 @@
         grid-column: 1/ 2;
         grid-row: 1 / 2;
       }
+
       .info {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
         padding-left: 5rem;
+
         .description {
           width: 100%;
         }
@@ -85,24 +104,30 @@
 }
 
 @include tablet {
+
   .grid_container {
+
     &:nth-child(even),
     &:nth-child(odd) {
       grid-template-columns: 1fr;
       grid-gap: 0;
+
       .info {
         align-items: center;
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         padding: 0;
+
         .name {
           font-size: 3rem;
         }
+
         .description {
           text-align: center;
           width: 25rem;
         }
       }
+
       .image {
         grid-column: 1 / 2;
         grid-row: 1 /2;
@@ -111,16 +136,22 @@
   }
 }
 @include mobile {
+
   .grid_container {
+
     &:nth-child(even),
     &:nth-child(odd) {
+
       .image {
         height: 20rem;
       }
+
       .info {
+
         .name {
           font-size: 1.2rem;
         }
+        
         .description {
           width: 18rem;
         }

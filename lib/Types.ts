@@ -16,6 +16,7 @@ export interface CategoryProduct{
   image: {desktop: string;};
   description: string;
   category: string;
+  new: boolean;
 };
 
 export interface ProductProps{
@@ -26,7 +27,7 @@ export interface ProductProps{
   new: boolean;
   price: number;
   features: string;
-  includes: {quantity: number, item: string}[];
+  includes: InTheBox;
   gallery: ProductGallery;
   others: Others;
 };
@@ -42,6 +43,8 @@ export interface ProductGallery{
     desktop: string;
   }
 };
+
+export type InTheBox = {quantity: number, item: string}[];
 
 export type Others = {
   category: string;
