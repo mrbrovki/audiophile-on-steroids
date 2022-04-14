@@ -12,10 +12,10 @@ import '../styles/css/globals.css';
 
 const initState: State= {
   products: [],
-  total: 0,
+  total: {amount: 0, totalPrice: 0},
   isOverlay: false,
   navBarVisiblity: 'hidden',
-  cartItemsVisibility: 'hidden'
+  isCartVisible: false
 };
 
 export const Context = createContext<{state: State, dispatch: Dispatch<Action>}>({state: initState, dispatch: () => {}});
@@ -26,20 +26,30 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     const {type, payload} = action;
     switch(type){
       case "TOTAL":
-        return {...state, total: state.total};
-      case "PRODUCTS":
-        return {...state, products: [...state.products, payload]};
+        return {...state, total: {amount: payload.amount, totalPrice: payload.totalPrice}};
+      case "ADD_PRODUCT":
+        let isMatch = false;
+        const newArr = state.products.map(product=>{
+          if(product.id === payload.id){
+            isMatch = true;
+            return {...product, amount: product.amount + payload.amount};
+          }
+          else{
+            return product;
+          }
+        });
+        return isMatch? {...state, products: newArr} : {...state, products: [...state.products, payload]};
+      case "REMOVE_ALL_PRODUCTS":
+        return {...state, products: payload};
       case 'OVERLAY':
-        console.log('trigger')
         return {...state, isOverlay: payload};
       case "NAVBAR":
         return {...state, navBarVisiblity: payload};
       case "CART":
-        return{...state, cartItemsVisibility: payload};
+        return{...state, isCartVisible: payload};
     }
   };
   const [state, dispatch] = useReducer(reducer, initState);
-
   return (
     <Context.Provider value={{state, dispatch}}>
       <Layout>

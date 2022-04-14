@@ -1,0 +1,19 @@
+@import "variables";
+@import "responsive";
+
+.cart_items_container{
+ position: absolute;
+ background-color: white;
+ top: 6rem;
+ right: 0;
+ width: 20rem;
+ height: 30rem;
+ border-radius: 0.2rem;
+ padding: 1.5rem;
+}
+@include mobile{
+ .cart_items_container{
+  width: 15rem;
+  height: 20rem;
+ }
+}

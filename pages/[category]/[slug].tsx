@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useContext } from 'react';
 
 //  components
 import Main from '../../components/Layout/Main';
@@ -12,6 +12,9 @@ import {ProductContext, ProductProps} from '../../lib/Types';
 //  styles
 import styles from '../../styles/css/product.module.css';
 import Counter from '../../components/Counter';
+import { Context } from '../_app';
+import Gallery from '../../components/Gallery';
+import Others from '../../components/Others';
 
 export const getStaticPaths:GetStaticPaths = async () =>{
  const res = await fetch('https://my-json-server.typicode.com/mrbrovki/demo/all');
@@ -40,6 +43,10 @@ export const getStaticProps:GetStaticProps= async (context) =>{
 
 const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
   const router = useRouter();
+  const {state: {products}, dispatch} = useContext(Context);
+  const addToCart = (amount: number) =>{
+    dispatch({type: 'ADD_PRODUCT', payload: {id: productProps.id, amount: amount, price: productProps.price}});
+  };
   return (
     <Main>
       <div className={styles.product_container}>
@@ -52,9 +59,11 @@ const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
             <h1 className={styles.name}>{productProps.name}</h1>
             <p className={styles.description}>{productProps.description}</p>
             <p className={styles.price}>${productProps.price}</p>
-            <Counter />
+            <Counter addToCart={(amount) => addToCart(amount)}/>
           </div>
         </section>
+        <Gallery gallery={productProps.gallery}/>
+        <Others others={productProps.others}/>
       </div>
     </Main>
   );

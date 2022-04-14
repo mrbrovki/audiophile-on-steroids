@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 
 //  styles
 import styles from '../styles/css/counter.module.css';
 
 
 
-const Counter = () => {
+const Counter :FC<{addToCart: (amount: number) => void}> = ({addToCart}) => {
   const [amount, setAmount] = useState(0);
   const increase = () => setAmount(prev => prev + 1);
   const decrease = () => setAmount(prev => prev > 0? prev - 1: prev);
-
+  
   return (
    <div className={styles.flex_container}>
     <div className={styles.counter_container}  >
@@ -17,9 +17,9 @@ const Counter = () => {
      <p className={styles.amount}>{amount}</p>
      <p className={styles.sign} onClick={increase}>+</p> 
     </div>
-    <div className={styles.add_to_cart_btn}>
+    <button className={styles.add_to_cart_btn} onClick={() => addToCart(amount)}>
      add to cart
-    </div>
+    </button>
    </div>
   );
 };

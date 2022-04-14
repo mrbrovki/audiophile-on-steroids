@@ -1,0 +1,39 @@
+@import "responsive";
+
+.gallery{
+ display: grid;
+ grid-gap: 2rem;
+ 
+ .grid_item_1,
+ .grid_item_2,
+ .grid_item_3{
+  position: relative;
+  border-radius: 0.8rem;
+  overflow: hidden;
+ }
+
+ @include desktop{
+  grid-template-columns: 1fr 1.5fr;
+  grid-auto-rows: 20rem;
+
+  .grid_item_3{
+   grid-column: 2 / 3;
+   grid-row: 1 / 3;
+  }
+ }
+ 
+ @include tablet{
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 15rem;
+ }
+
+ @include mobile{
+  grid-template-columns: 1fr;
+  
+  .grid_item_3{
+   grid-column: 1 / 2;
+   grid-row: 3 / 4;
+  }
+ }
+}
+

@@ -19,6 +19,7 @@ export interface CategoryProduct{
 };
 
 export interface ProductProps{
+  id: number;
   name: string;
   image: {desktop: string};
   description: string;
@@ -26,23 +27,28 @@ export interface ProductProps{
   price: number;
   features: string;
   includes: {quantity: number, item: string}[];
-  gallery:{
-    first:{
-      desktop: string;
-    },
-    second:{
-      desktop: string;
-    }
-    third:{
-      desktop: string;
-    }
-  };
-  others:{
-    slug: string;
-    name: string;
-    image:{desktop: string};
-  }[];
+  gallery: ProductGallery;
+  others: Others;
 };
+
+export interface ProductGallery{
+  first:{
+    desktop: string;
+  },
+  second:{
+    desktop: string;
+  }
+  third:{
+    desktop: string;
+  }
+};
+
+export type Others = {
+  category: string;
+  slug: string;
+  name: string;
+  image:{desktop: string};
+}[];
 
 export interface CartProps{
   toggleCart: () => void;
@@ -51,23 +57,25 @@ export interface CartProps{
 };
 
 export type Action = 
-| {type: "TOTAL", payload: number}
-| {type: "PRODUCTS", payload: Products}
+| {type: "TOTAL", payload: {amount: number, totalPrice: number}}
+| {type: "ADD_PRODUCT", payload: Product}
+| {type: 'REMOVE_ALL_PRODUCTS', payload: []}
 | {type: "OVERLAY", payload: boolean}
 | {type: "NAVBAR", payload: string}
-| {type: "CART", payload: string}
+| {type: "CART", payload: boolean}
 
-export interface Products{
-  index: number;
+export interface Product{
+  id: number;
   amount: number;
+  price: number;
 };
 
 export interface State{
-  products: Array<Products>;
-  total: number;
+  products: Array<Product>;
+  total: {amount: number, totalPrice: number};
   isOverlay: boolean;
-  navBarVisiblity: string;
-  cartItemsVisibility: string;
+  navBarVisiblity: 'hidden' | 'shown';
+  isCartVisible: boolean;
 };
 
 export interface NavProps{

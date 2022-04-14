@@ -1,8 +1,11 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAGA,AAAA,qBAAqB,CAAA;EACpB,QAAQ,EAAE,QAAQ;EAClB,gBAAgB,EAAE,KAAK;EACvB,GAAG,EAAE,IAAI;EACT,KAAK,EAAE,CAAC;EACR,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,aAAa,EAAE,MAAM;EACrB,OAAO,EAAE,MAAM;CACf;;AECC,MAAM,EAAE,SAAS,EAAE,KAAK;EFCzB,AAAA,qBAAqB,CAAA;IACpB,KAAK,EAAE,KAAK;IACZ,MAAM,EAAE,KAAK;GACb",
     "sources": [
-        "../scss/cart_items.module.scss"
+        "../scss/cart_items.module.scss",
+        "../scss/_variables.scss",
+        "../scss/_responsive.scss",
+        "../scss/_variables.scss"
     ],
     "names": [],
     "file": "cart_items.module.css"

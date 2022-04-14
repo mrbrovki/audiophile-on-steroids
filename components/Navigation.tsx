@@ -13,9 +13,17 @@ import { Context } from '../pages/_app';
 
 
 const Navigation:FC<NavProps> = ({navType}) => {
-  const [navBarVis, setNavBarVis] = useState('hidden');
-
-  const toggleNav = () => setNavBarVis(prev => prev === 'shown' ? 'hidden' : 'shown');
+  const {state:{navBarVisiblity}, dispatch} = useContext(Context);
+  const toggleNav = () => {
+    if(navBarVisiblity === 'hidden'){
+      dispatch({type:'NAVBAR', payload:'shown'});
+      dispatch({type: 'OVERLAY', payload: true});
+    }
+    else{
+      dispatch({type:'NAVBAR', payload:'hidden'});
+      dispatch({type: 'OVERLAY', payload: false});
+    }
+  }
 
   switch(navType){
     case 'HEADER':
@@ -30,7 +38,7 @@ const Navigation:FC<NavProps> = ({navType}) => {
             <div className={styles.hamburger} onClick={toggleNav}> 
               <Image src='/assets/shared/tablet/icon-hamburger.svg' alt='hamburger' width={25}  height={25}/>
             </div>
-            <ul className={styles.nav_list + ' ' + styles[navBarVis]}>
+            <ul className={styles.nav_list + ' ' + styles[navBarVisiblity]}>
               <li className={styles.link}>
                 <Link href={'/'}>
                   <a>home</a>
