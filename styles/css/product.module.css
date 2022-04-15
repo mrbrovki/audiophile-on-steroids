@@ -2,18 +2,6 @@
   margin-top: 4rem;
 }
 
-.product_container .go_back_btn {
-  font-size: 0.9rem;
-  font-weight: 800;
-  border: none;
-  background: none;
-  color: #828282;
-}
-
-.product_container .go_back_btn:hover {
-  cursor: pointer;
-}
-
 .product_container .grid_container {
   display: -ms-grid;
   display: grid;

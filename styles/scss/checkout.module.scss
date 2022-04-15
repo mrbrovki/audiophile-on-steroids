@@ -1,0 +1,19 @@
+@import 'responsive';
+@import 'variables';
+
+.checkout_container{
+ min-height: 50rem;
+ background-color: $checkout-bg-clr;
+}
+
+@include desktop{
+
+}
+
+@include tablet{
+
+}
+
+@include mobile{
+
+}

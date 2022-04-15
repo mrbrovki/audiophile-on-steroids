@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,YAAY,CAAC;EACZ,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,GAAG;EAChB,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,IAAI;EAChB,KAAK,ECMY,OAAO;CDDxB;;AAVD,AAOC,YAPW,AAOV,MAAM,CAAC;EACP,MAAM,EAAE,OAAO;CACf",
+    "sources": [
+        "../scss/go_back_button.module.scss",
+        "../scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "go_back_button.module.css"
+}

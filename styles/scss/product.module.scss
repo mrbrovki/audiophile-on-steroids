@@ -4,18 +4,6 @@
 .product_container {
   margin-top: 4rem;
 
-  .go_back_btn {
-    font-size: 0.9rem;
-    font-weight: 800;
-    border: none;
-    background: none;
-    color: $go-back-btn-clr;
-    
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
   .grid_container {
     display: grid;
     margin-top: 4rem;

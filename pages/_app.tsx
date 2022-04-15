@@ -1,14 +1,13 @@
 import {createContext, Dispatch, useReducer } from 'react';
-import type { AppProps } from 'next/app';
 //  components
 import Layout from '../components/Layout';
 
 //  types
 import {Action, State} from '../lib/Types';
+import type { AppProps } from 'next/app';
 
 //  styles
 import '../styles/css/globals.css';
-
 
 const initState: State= {
   products: [],
@@ -21,7 +20,6 @@ const initState: State= {
 export const Context = createContext<{state: State, dispatch: Dispatch<Action>}>({state: initState, dispatch: () => {}});
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  
   const reducer = <T extends State>(state: T, action: Action): T =>{
     const {type, payload} = action;
     switch(type){
@@ -57,7 +55,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         return {...state, navBarVisiblity: payload};
       case "CART":
         return{...state, isCartVisible: payload};
-    }
+    };
   };
   const [state, dispatch] = useReducer(reducer, initState);
   return (

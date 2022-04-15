@@ -1,0 +1,13 @@
+@import "variables";
+
+.go_back_btn {
+ font-size: 0.9rem;
+ font-weight: 800;
+ border: none;
+ background: none;
+ color: $go-back-btn-clr;
+
+ &:hover {
+  cursor: pointer;
+ }
+}

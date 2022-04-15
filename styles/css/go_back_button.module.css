@@ -1,0 +1,12 @@
+.go_back_btn {
+  font-size: 0.9rem;
+  font-weight: 800;
+  border: none;
+  background: none;
+  color: #828282;
+}
+
+.go_back_btn:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=go_back_button.module.css.map */

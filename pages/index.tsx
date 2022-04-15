@@ -1,4 +1,4 @@
-import { NextPage, GetStaticProps  } from 'next';
+import { NextPage } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
 

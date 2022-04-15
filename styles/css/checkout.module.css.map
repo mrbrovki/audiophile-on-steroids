@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,mBAAmB,CAAA;EAClB,UAAU,EAAE,KAAK;EACjB,gBAAgB,EEoBC,OAAO;CFnBxB",
+    "sources": [
+        "../scss/checkout.module.scss",
+        "../scss/_responsive.scss",
+        "../scss/_variables.scss",
+        "../scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "checkout.module.css"
+}

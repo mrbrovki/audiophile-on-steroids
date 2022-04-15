@@ -1,24 +1,28 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useContext } from 'react';
+import { Context } from '../_app';
+import Head from 'next/head';
+
+//  functions
 import { dot } from '../../lib/MyFunctions';
+
 //  components
 import Main from '../../components/Layout/Main';
-
-//  types
-import {ProductContext, ProductProps} from '../../lib/Types';
-
-//  styles
-import styles from '../../styles/css/product.module.css';
 import Counter from '../../components/Counter';
-import { Context } from '../_app';
 import Gallery from '../../components/Gallery';
 import Others from '../../components/Others';
 import ProductDetails from '../../components/Product/ProductDetails';
 import Gear from '../../components/Gear';
 import CategoryLinks from '../../components/CategoryLinks';
-import Head from 'next/head';
+import GoBackButton from '../../components/GoBackButton';
+
+//  types
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import {ProductContext, ProductProps} from '../../lib/Types';
+
+//  styles
+import styles from '../../styles/css/product.module.css';
 
 export const getStaticPaths:GetStaticPaths = async () =>{
  const res = await fetch('https://my-json-server.typicode.com/mrbrovki/demo/all');
@@ -26,7 +30,7 @@ export const getStaticPaths:GetStaticPaths = async () =>{
  const paths = data.map(product =>{
   return{
     params: {slug: product.slug, category: product.category}
-  }
+  };
  });
  return{
    paths,
@@ -62,7 +66,7 @@ const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
     </Head>
     <Main>
       <div className={styles.product_container}>
-        <button onClick={router.back} className={styles.go_back_btn}>Go Back</button>
+        <GoBackButton router={router} marginTop='0rem'/>
         <section className={styles.grid_container}>
           <div className={styles.image}>
             <Image src={productProps.image.desktop} layout='fill' objectFit='contain' alt='item' quality={70} priority={true}/>
