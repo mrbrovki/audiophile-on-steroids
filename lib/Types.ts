@@ -37,18 +37,18 @@ export interface CartProductProps{
   name: string;
   image: {mobile: string};
   price: number;
-}
+};
 
 export interface ProductGallery{
   first:{
     desktop: string;
-  },
+  };
   second:{
     desktop: string;
-  }
+  };
   third:{
     desktop: string;
-  }
+  };
 };
 
 export type InTheBox = {quantity: number, item: string}[];
@@ -92,7 +92,7 @@ export interface State{
 
 export interface NavProps{
   navType: string;
-}
+};
 
 export type HeroType = 'home' | 'category';
 
@@ -100,4 +100,15 @@ export interface CounterProps{
   addToCart?: (amount: number) => void;
   id: number;
   type:string;
-}
+};
+
+export interface MainProps{
+  children: React.ReactNode;
+  marginTop: string;
+  backgroundColor: string;
+};
+
+export interface PaymentInputRef{
+  e_money: HTMLInputElement | null;
+  cash: HTMLInputElement | null;
+};

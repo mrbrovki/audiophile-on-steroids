@@ -1,0 +1,38 @@
+@import 'variables';
+
+.summary_container{
+ background-color: $clr-white;
+ border-radius: 0.5rem;
+ box-shadow: $img-shadow;
+ height: 30rem;
+ padding: 1.5rem;
+
+ .table_container{
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  .heading {
+   font-size: 1.5rem;
+  }
+  .price_name{
+   color: $clr-grey;
+  }
+ }
+
+ .summary_btn{
+  display: block;
+  margin-top: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 0.2rem;
+  color: $clr-white;
+  background-color: $clr-orange;
+  opacity: 0.9;
+  line-height: 2rem;
+
+  &:hover{
+   opacity: 1;
+   transition: opacity 0.3s;
+  }
+ }
+}

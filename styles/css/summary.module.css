@@ -1,0 +1,41 @@
+.summary_container {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0 0.5rem #64646449;
+          box-shadow: 0 0 0.5rem #64646449;
+  height: 30rem;
+  padding: 1.5rem;
+}
+
+.summary_container .table_container {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.summary_container .table_container .heading {
+  font-size: 1.5rem;
+}
+
+.summary_container .table_container .price_name {
+  color: #a6a6a6;
+}
+
+.summary_container .summary_btn {
+  display: block;
+  margin-top: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 0.2rem;
+  color: #fff;
+  background-color: #d87d48;
+  opacity: 0.9;
+  line-height: 2rem;
+}
+
+.summary_container .summary_btn:hover {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+/*# sourceMappingURL=summary.module.css.map */

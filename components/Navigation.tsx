@@ -12,8 +12,14 @@ import { Context } from '../pages/_app';
 
 
 
+
 const Navigation:FC<NavProps> = ({navType}) => {
   const {state:{navBarVisiblity}, dispatch} = useContext(Context);
+  const closeAll = () =>{
+    dispatch({type: 'OVERLAY', payload: false});
+    dispatch({type: 'CART', payload: false});
+    dispatch({type:'NAVBAR', payload:'hidden'});
+  };
   const toggleNav = () => {
     if(navBarVisiblity === 'hidden'){
       dispatch({type: 'CART', payload: false});
@@ -24,13 +30,7 @@ const Navigation:FC<NavProps> = ({navType}) => {
       dispatch({type:'NAVBAR', payload:'hidden'});
       dispatch({type: 'OVERLAY', payload: false});
     }
-  }
-  const closeAll = () =>{
-    dispatch({type: 'OVERLAY', payload: false});
-    dispatch({type: 'CART', payload: false});
-    dispatch({type:'NAVBAR', payload:'hidden'});
-  }
-
+  };
   switch(navType){
     case 'HEADER':
       return(

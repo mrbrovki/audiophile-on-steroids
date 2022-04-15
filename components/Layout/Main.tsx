@@ -1,13 +1,16 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 
 //  styles
 import styles from '../../styles/css/main.module.css';
 
+// types
+import { MainProps } from '../../lib/Types';
 
 
-const Main:FC<{children: ReactNode, marginTop?: string}> = ({children, marginTop}) =>{
+
+const Main:FC<MainProps> = ({children, marginTop, backgroundColor}) =>{
  return(
-  <main className={styles.main_container} style={{marginTop}}>
+  <main className={styles.main_container} style={{marginTop, backgroundColor}}>
    {children}
   </main>
  );

@@ -58,7 +58,7 @@ const Category:NextPage<{data: CategoryProduct[]}> = ({data}) => {
       <Hero type='category'>
         {data[0].category}
       </Hero>
-      <Main marginTop='21rem'>
+      <Main marginTop='21rem' backgroundColor='#fff'>
           <section>
             {products}
           </section>

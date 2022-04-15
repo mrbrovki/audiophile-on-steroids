@@ -1,19 +1,158 @@
 @import 'responsive';
 @import 'variables';
 
-.checkout_container{
- min-height: 50rem;
- background-color: $checkout-bg-clr;
-}
 
 @include desktop{
+ 
+ .bold{
+  font-weight: 700;
+ }
 
+ .checkout_container{
+  display: grid;
+  margin-top: 3rem;
+  grid-template-columns: 3fr minmax(18rem, 1fr);
+  grid-gap: 2rem;
+  fieldset {
+   background-color: $clr-white;
+   padding: 3rem;
+   border-radius: 0.5rem;
+   border: none;
+   box-shadow: $img-shadow;
+  
+   h1{
+    text-transform: uppercase;
+    font-size: 2rem;
+   }
+
+   .subform{
+    text-transform: uppercase;
+    color: $clr-orange;
+    opacity: 0.8;
+    margin-top: 3rem;
+    font-weight: 700;
+   }
+
+   .billing_details,
+   .shipping_info,
+   .payment_details,
+   .e_money_info {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+
+    p{
+     margin: 0;
+    }
+
+   }
+   .billing_details,
+   .shipping_info,
+   .e_money_info{
+
+    label{
+
+     input{
+      line-height: 3rem;
+      padding-left: 1.5rem;
+      width: 100%;
+      border: 1px solid $clr-grey;
+      border-radius: 0.3rem;
+     }
+    }
+   }
+
+   .billing_details{
+    grid-auto-rows: repeat(2, 5rem);
+   }
+
+   .shipping_info{
+    grid-auto-rows: repeat(3, 5rem);
+
+    .adress{
+     grid-column: 1 / 3;
+    }
+   }
+
+   .payment_details{
+    grid-auto-rows: repeat(2, 5rem);
+
+    .radio {
+     appearance: none;
+     margin-left: 1.5rem;
+     border-radius: 50%;
+     outline: 1px solid #c9c8c8;
+     outline-offset: 0.2rem;
+     width: 0.5rem;
+     height: 0.5rem;
+
+     &:checked {
+      background: $clr-orange;
+     }
+    }
+
+    .e_money, .cash{
+     border: 1px solid $clr-grey;
+     border-radius: 0.3rem;
+     line-height: 3rem;
+     width: 100%;
+     grid-column: 2 / 3;
+
+     span{
+      margin-left: 1rem;
+     }
+    }
+   }
+
+   .e_money_info{
+    margin-top: 3rem;
+    grid-auto-rows: 5rem;
+   }
+  }
+ }
 }
 
-@include tablet{
 
+@include tablet{
+ .checkout_container{
+  grid-template-columns: 1fr;
+  
+  fieldset{
+   width: 100%;
+
+   .billing_details,
+   .shipping_info,
+   .e_money_info {
+    grid-template-columns: 1fr;
+   }
+
+   .billing_details {
+    grid-auto-rows: repeat(3, 5rem);
+   }
+
+   .shipping_info{
+    grid-auto-rows: repeat(4, 5rem);
+
+    .adress {
+     grid-column: 1 / 2;
+    }
+   }
+  }
+ }
 }
 
 @include mobile{
+ .checkout_container{
+  
+  fieldset{
 
+   .payment_details{
+    grid-template-columns: 1fr;
+
+    .e_money, .cash{
+     grid-column: 1 / 2;
+    }
+   }
+  }
+ }
 }

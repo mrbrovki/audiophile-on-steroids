@@ -64,7 +64,7 @@ const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
     <Head>
       <title>{productProps.name.toUpperCase()}</title>
     </Head>
-    <Main>
+    <Main marginTop='0' backgroundColor='#fff'>
       <div className={styles.product_container}>
         <GoBackButton router={router} marginTop='0rem'/>
         <section className={styles.grid_container}>

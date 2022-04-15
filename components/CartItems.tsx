@@ -37,6 +37,12 @@ const CartItems = () => {
     return data;
   };
   const {data} = useSWR<CartProductProps[]>(filteredURL, getData);
+  const closeAll = () =>{
+    dispatch({type: 'OVERLAY', payload: false});
+    dispatch({type: 'CART', payload: false});
+    dispatch({type:'NAVBAR', payload:'hidden'});
+  };
+
   useEffect(()=>{
     if(data){
       setItems(
@@ -87,7 +93,7 @@ const CartItems = () => {
         <p>${dot(total.totalPrice)}</p>
       </div>
       <Link href='/checkout'>
-        <a className={styles.checkout_btn}>checkout</a>
+        <a className={styles.checkout_btn} onClick={closeAll}>checkout</a>
       </Link>
       </div>
     </div>
