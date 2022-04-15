@@ -36,7 +36,7 @@ const Navigation:FC<NavProps> = ({navType}) => {
       return(
         <>
           <Link href={'/'} passHref>
-            <a className={styles.header_logo}>
+            <a className={styles.header_logo} onClick={closeAll}>
               <Image src='/assets/shared/desktop/logo.svg' alt='logo' width={143} height={25}/>
             </a>
           </Link>

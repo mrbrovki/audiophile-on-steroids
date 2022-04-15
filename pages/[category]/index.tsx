@@ -1,7 +1,7 @@
 import type { NextPage, GetStaticProps, GetStaticPaths} from 'next';
 import Image from 'next/image';
+import Head from 'next/head';
 import React from 'react';
-
 // types
 import {CategoryContext, CategoryProduct} from '../../lib/Types';
 
@@ -53,6 +53,9 @@ const Category:NextPage<{data: CategoryProduct[]}> = ({data}) => {
   });
   return (
     <>
+      <Head>
+        <title>{data[0].category.toUpperCase()}</title>
+      </Head>
       <Hero type='category'>
         {data[0].category}
       </Hero>

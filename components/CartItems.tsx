@@ -58,7 +58,7 @@ const CartItems = () => {
           else{
             return <React.Fragment key={item.id}></React.Fragment>
           }
-      })
+        })
       );
     }
   }, [data]);

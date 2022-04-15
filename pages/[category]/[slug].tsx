@@ -18,6 +18,7 @@ import Others from '../../components/Others';
 import ProductDetails from '../../components/Product/ProductDetails';
 import Gear from '../../components/Gear';
 import CategoryLinks from '../../components/CategoryLinks';
+import Head from 'next/head';
 
 export const getStaticPaths:GetStaticPaths = async () =>{
  const res = await fetch('https://my-json-server.typicode.com/mrbrovki/demo/all');
@@ -55,6 +56,10 @@ const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
     }
   };
   return (
+    <>
+    <Head>
+      <title>{productProps.name.toUpperCase()}</title>
+    </Head>
     <Main>
       <div className={styles.product_container}>
         <button onClick={router.back} className={styles.go_back_btn}>Go Back</button>
@@ -77,6 +82,7 @@ const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
         <Gear />
       </div>
     </Main>
+    </>
   );
 };
 
