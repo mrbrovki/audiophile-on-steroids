@@ -1,4 +1,4 @@
-.flex_container {
+.flex_container, .cart_flex_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7,7 +7,7 @@
           justify-content: flex-start;
 }
 
-.flex_container .counter_container {
+.flex_container .counter_container, .cart_flex_container .counter_container {
   background-color: #f1f1f1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,23 +27,23 @@
           user-select: none;
 }
 
-.flex_container .counter_container .sign {
+.flex_container .counter_container .sign, .cart_flex_container .counter_container .sign {
   color: #9a9a9a;
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
 }
 
-.flex_container .counter_container .sign:hover {
+.flex_container .counter_container .sign:hover, .cart_flex_container .counter_container .sign:hover {
   cursor: pointer;
 }
 
-.flex_container .counter_container .amount {
+.flex_container .counter_container .amount, .cart_flex_container .counter_container .amount {
   font-size: 1.5rem;
   width: 3rem;
   text-align: center;
 }
 
-.flex_container .add_to_cart_btn {
+.flex_container .add_to_cart_btn, .cart_flex_container .add_to_cart_btn {
   margin-left: 1rem;
   background-color: #ee7433;
   border: none;
@@ -54,38 +54,55 @@
   text-align: center;
 }
 
-.flex_container .add_to_cart_btn:hover {
+.flex_container .add_to_cart_btn:hover, .cart_flex_container .add_to_cart_btn:hover {
   opacity: 1;
   -webkit-box-shadow: 0 0 10px #3838383e;
           box-shadow: 0 0 10px #3838383e;
   cursor: pointer;
 }
 
+.cart_flex_container {
+  width: 5rem;
+}
+
+.cart_flex_container .counter_container {
+  height: 2rem;
+  padding: 0 0.5rem;
+  border-radius: 0.1rem;
+}
+
+.cart_flex_container .counter_container .amount {
+  font-size: 1rem;
+}
+
 @media (max-width: 10240px) {
-  .flex_container {
+  .flex_container, .cart_flex_container {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
-  .flex_container .counter_container {
+  .flex_container .counter_container, .cart_flex_container .counter_container {
     width: 7rem;
   }
-  .flex_container .add_to_cart_btn {
+  .flex_container .add_to_cart_btn, .cart_flex_container .add_to_cart_btn {
     width: 10rem;
   }
 }
 
 @media (max-width: 768px) {
-  .flex_container {
+  .flex_container, .cart_flex_container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .flex_container .counter_container {
+  .flex_container .counter_container, .cart_flex_container .counter_container {
     width: 7rem;
   }
-  .flex_container .add_to_cart_btn {
+  .flex_container .add_to_cart_btn, .cart_flex_container .add_to_cart_btn {
     width: 8rem;
+  }
+  .cart_flex_container {
+    width: 4rem;
   }
 }
 /*# sourceMappingURL=counter.module.css.map */

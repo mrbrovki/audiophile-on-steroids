@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
-import { dot } from '../../lib/dot';
+import { dot } from '../../lib/MyFunctions';
 //  components
 import Main from '../../components/Layout/Main';
 
@@ -46,9 +46,13 @@ export const getStaticProps:GetStaticProps= async (context) =>{
 
 const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
   const router = useRouter();
-  const {state: {products}, dispatch} = useContext(Context);
+  const {dispatch} = useContext(Context);
   const addToCart = (amount: number) =>{
     dispatch({type: 'ADD_PRODUCT', payload: {id: productProps.id, amount: amount, price: productProps.price}});
+    if(amount){
+      dispatch({type:'CART', payload: true});
+      dispatch({type: 'OVERLAY', payload: true});
+    }
   };
   return (
     <Main>
@@ -63,7 +67,7 @@ const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
             <h1 className={styles.name}>{productProps.name}</h1>
             <p className={styles.description}>{productProps.description}</p>
             <p className={styles.price}>${dot(productProps.price)}</p>
-            <Counter addToCart={(amount) => addToCart(amount)}/>
+            <Counter addToCart={(amount) => addToCart(amount)} type='ProductPage' id={productProps.id}/>
           </div>
         </section>
         <ProductDetails features={productProps.features} includes={productProps.includes}/>

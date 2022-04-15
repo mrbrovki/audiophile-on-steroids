@@ -16,6 +16,7 @@ const Navigation:FC<NavProps> = ({navType}) => {
   const {state:{navBarVisiblity}, dispatch} = useContext(Context);
   const toggleNav = () => {
     if(navBarVisiblity === 'hidden'){
+      dispatch({type: 'CART', payload: false});
       dispatch({type:'NAVBAR', payload:'shown'});
       dispatch({type: 'OVERLAY', payload: true});
     }
@@ -23,6 +24,11 @@ const Navigation:FC<NavProps> = ({navType}) => {
       dispatch({type:'NAVBAR', payload:'hidden'});
       dispatch({type: 'OVERLAY', payload: false});
     }
+  }
+  const closeAll = () =>{
+    dispatch({type: 'OVERLAY', payload: false});
+    dispatch({type: 'CART', payload: false});
+    dispatch({type:'NAVBAR', payload:'hidden'});
   }
 
   switch(navType){
@@ -39,14 +45,14 @@ const Navigation:FC<NavProps> = ({navType}) => {
               <Image src='/assets/shared/tablet/icon-hamburger.svg' alt='hamburger' width={25}  height={25}/>
             </div>
             <ul className={styles.nav_list + ' ' + styles[navBarVisiblity]}>
-              <li className={styles.link}>
+              <li className={styles.link} onClick={closeAll}>
                 <Link href={'/'}>
                   <a>home</a>
                 </Link>
                </li>
                 {categories.map(category =>{
                   return(
-                    <li key={category} className={styles.link}>
+                    <li key={category} className={styles.link} onClick={closeAll}>
                       <Link href={`/${category}`}>
                         <a>{category}</a>
                       </Link>

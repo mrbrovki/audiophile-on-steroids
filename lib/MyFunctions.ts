@@ -1,3 +1,5 @@
+import { Product } from "./Types";
+
 export const dot = (num: number) =>{
  const numStr = String(num);
  const numArr = numStr.split('');
@@ -10,4 +12,14 @@ export const dot = (num: number) =>{
  }
  newArr.unshift(numArr[0]);
  return newArr.join('');
+}
+
+export const getAmount = (products: Product[], id: number): number  =>{
+ let amount = 0;
+ products.forEach(product => {
+  if(product.id === id){
+   amount = product.amount;
+  }
+ });
+ return amount;
 }

@@ -16,6 +16,8 @@
   position: relative;
   border-radius: 1rem;
   background-color: #f1f1f1;
+  -webkit-box-shadow: 0 0 0.5rem #64646449;
+          box-shadow: 0 0 0.5rem #64646449;
   height: 40rem;
 }
 

@@ -1,0 +1,1 @@
+export const baseURL = 'https://my-json-server.typicode.com/mrbrovki/demo/all?';

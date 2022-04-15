@@ -18,6 +18,7 @@ const Cart:FC = () => {
 
   const toggleCart = () =>{
     if(isCartVisible === false){
+      dispatch({type: 'NAVBAR', payload: 'hidden'});
       dispatch({type:'CART', payload: true});
       dispatch({type: 'OVERLAY', payload: true});
     }
@@ -31,8 +32,8 @@ const Cart:FC = () => {
    <>
     <div className={styles.cart_clicker} onClick={toggleCart}>
       <Image className={styles.cart_icon} src='/assets/shared/desktop/icon-cart.svg' height={24} width={24} alt='cart'/>
-      {isCartVisible && <CartItems />}
      </div>
+    {isCartVisible && <CartItems />}
    </>
   );
 };

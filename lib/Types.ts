@@ -32,6 +32,13 @@ export interface ProductProps{
   others: Others;
 };
 
+export interface CartProductProps{
+  id: number;
+  name: string;
+  image: {mobile: string};
+  price: number;
+}
+
 export interface ProductGallery{
   first:{
     desktop: string;
@@ -62,10 +69,12 @@ export interface CartProps{
 export type Action = 
 | {type: "TOTAL", payload: {amount: number, totalPrice: number}}
 | {type: "ADD_PRODUCT", payload: Product}
+| {type: "SET_PRODUCT_AMOUNT", payload: {amount: number, id: number}}
 | {type: 'REMOVE_ALL_PRODUCTS', payload: []}
 | {type: "OVERLAY", payload: boolean}
 | {type: "NAVBAR", payload: string}
 | {type: "CART", payload: boolean}
+
 
 export interface Product{
   id: number;
@@ -86,3 +95,9 @@ export interface NavProps{
 }
 
 export type HeroType = 'home' | 'category';
+
+export interface CounterProps{
+  addToCart?: (amount: number) => void;
+  id: number;
+  type:string;
+}

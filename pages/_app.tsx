@@ -39,6 +39,16 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           }
         });
         return isMatch? {...state, products: newArr} : {...state, products: [...state.products, payload]};
+      case 'SET_PRODUCT_AMOUNT':
+        const newProducts = state.products.map(product =>{
+          if(product.id === payload.id){
+            return {...product, amount: payload.amount};
+          }
+          else{
+            return product;
+          }
+        });
+        return {...state, products: newProducts}
       case "REMOVE_ALL_PRODUCTS":
         return {...state, products: payload};
       case 'OVERLAY':
