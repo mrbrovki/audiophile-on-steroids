@@ -4,14 +4,19 @@
 .footer_container {
   display: grid;
   min-height: 20rem;
-  padding: 3rem 10%;
   background-color: $footer-bg-clr;
 
   @include desktop{
     grid-template: 2rem 15rem 3rem / 1fr 1fr;
+    padding: 3rem 5rem;
+  }
+  
+  @include tablet{
+    padding: 3rem 4rem;
   }
   
   @include mobile{
     grid-template: 4rem 5rem 15rem 4rem 3rem / 1fr;
+    padding: 3rem 2rem;
   }
 }

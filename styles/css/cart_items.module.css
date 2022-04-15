@@ -2,7 +2,6 @@
   position: absolute;
   background-color: white;
   top: 6rem;
-  right: 10vw;
   overflow-y: scroll;
   border-radius: 0.2rem;
 }
@@ -89,6 +88,7 @@
     height: 30rem;
     width: 20rem;
     padding: 1.5rem;
+    right: 5rem;
   }
   .cart_items_container .cart_top .total_amount {
     font-weight: 600;
@@ -119,11 +119,18 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .cart_items_container {
+    right: 4rem;
+  }
+}
+
 @media (max-width: 768px) {
   .cart_items_container {
     padding: 1rem;
     width: 15rem;
     height: 24rem;
+    right: 2rem;
   }
   .cart_items_container .products .item_container .image_container {
     width: 60px;

@@ -2,7 +2,6 @@
   display: -ms-grid;
   display: grid;
   min-height: 20rem;
-  padding: 3rem 10%;
   background-color: #1A1A1A;
 }
 
@@ -11,6 +10,13 @@
     -ms-grid-rows: 2rem 15rem 3rem;
     -ms-grid-columns: 1fr 1fr;
         grid-template: 2rem 15rem 3rem / 1fr 1fr;
+    padding: 3rem 5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer_container {
+    padding: 3rem 4rem;
   }
 }
 
@@ -19,6 +25,7 @@
     -ms-grid-rows: 4rem 5rem 15rem 4rem 3rem;
     -ms-grid-columns: 1fr;
         grid-template: 4rem 5rem 15rem 4rem 3rem / 1fr;
+    padding: 3rem 2rem;
   }
 }
 /*# sourceMappingURL=footer.module.css.map */

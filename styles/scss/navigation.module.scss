@@ -111,6 +111,7 @@
 }
 
 @include tablet{
+  
   .header_logo{
     margin: 0 auto;
     grid-row: 1 / 2;
@@ -126,7 +127,7 @@
 
     .nav_list{
       top: 5rem;
-      left: 2.5rem;
+      left: 0.5rem;
       max-height: 0rem;
       overflow: hidden;
       transition: max-height 0.3s;
@@ -172,12 +173,14 @@
   .header_nav_container {
 
     .nav_list {
-      left: 0;
+      left: -1.5rem;
     }
   }
+
   .footer_logo {
     margin: 0 auto;
   }
+
   .footer_nav_container {
     justify-content: center;
 
@@ -189,6 +192,7 @@
       }
     }
   }
+
   .company_info, .copyright{
     width: 100%;
     text-align: center;

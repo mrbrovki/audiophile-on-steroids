@@ -125,7 +125,7 @@
   }
   .header_nav_container .nav_list {
     top: 5rem;
-    left: 2.5rem;
+    left: 0.5rem;
     max-height: 0rem;
     overflow: hidden;
     -webkit-transition: max-height 0.3s;
@@ -161,7 +161,7 @@
 
 @media (max-width: 768px) {
   .header_nav_container .nav_list {
-    left: 0;
+    left: -1.5rem;
   }
   .footer_logo {
     margin: 0 auto;

@@ -1,8 +1,21 @@
 @import 'variables';
+@import "responsive";
 
-.main_container{
-     display: block;
-     padding: 5rem 10%;
-     overflow-x: hidden;
-     background-color: $main-bg-clr;
+@include desktop{
+     .main_container{
+          display: block;
+          padding: 5rem 5rem;
+          overflow-x: hidden;
+          background-color: $main-bg-clr;
+     }
+}
+@include tablet{
+     .main_container{
+          padding: 5rem 4rem;
+     }
+}
+@include mobile {
+     .main_container {
+          padding: 5rem 2rem;
+     }
 }

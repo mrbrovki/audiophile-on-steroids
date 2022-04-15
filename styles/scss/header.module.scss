@@ -9,7 +9,6 @@
     grid-auto-rows: 5rem;
     width: 100%;
     align-items: center;
-    padding: 0 10% 0 10%;
     background-color: $header-bg-clr;
 
     &::after {
@@ -20,19 +19,41 @@
       height: 1px;
       left: 50%;
       transform: translate(-50%, 0);
-      width: 80%;
+      
   }
 }
 
 @include desktop {
 
     .header_container{
-        grid-template-columns: 143px 1fr 1.5rem;
+      grid-template-columns: 143px 1fr 1.5rem;
+      padding: 0 5rem;
+
+      &::after{
+        width: calc(100% - 10rem);
+      }
   }
 }
 @include tablet{
   
   .header_container{
     grid-template-columns: 1.5rem 1fr 1.5rem;
+    padding: 0 4rem;
+
+    &::after {
+      width: calc(100% - 8rem);
+    }
+  }
+}
+
+@include mobile{
+  
+  .header_container {
+    grid-template-columns: 1.5rem 1fr 1.5rem;
+    padding: 0 2rem;
+  
+    &::after {
+      width: calc(100% - 4rem);
+    }
   }
 }
