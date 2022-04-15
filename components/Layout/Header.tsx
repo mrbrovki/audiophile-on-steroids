@@ -4,6 +4,8 @@ import Image from 'next/image';
 
 //components
 import Cart from '../Cart';
+
+//  components
 import Navigation from '../Navigation';
 
 // styles

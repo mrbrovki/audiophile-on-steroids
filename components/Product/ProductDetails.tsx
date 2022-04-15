@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+
+//  types
 import { InTheBox } from '../../lib/Types';
 
 // styles 

@@ -1,7 +1,7 @@
 import React from 'react';
-import { categories } from '../public/categories';
 import Link from 'next/link';
 import Image from 'next/image';
+import { categories } from '../public/categories';
 
 //  styles
 import styles from '../styles/css/category_links.module.css';

@@ -1,4 +1,6 @@
 import { ReactNode, FC } from 'react';
+
+//  components
 import Overlay from '../Overlay';
 import Footer from './Footer';
 import Header from './Header';

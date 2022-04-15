@@ -3,11 +3,8 @@
   background-color: white;
   top: 6rem;
   right: 10vw;
-  width: 20rem;
-  height: 30rem;
-  border-radius: 0.2rem;
-  padding: 1.5rem;
   overflow-y: scroll;
+  border-radius: 0.2rem;
 }
 
 .cart_items_container .cart_top {
@@ -20,11 +17,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.cart_items_container .cart_top .total_amount {
-  font-weight: 600;
-  font-size: 1.5rem;
 }
 
 .cart_items_container .cart_top .remove_btn {
@@ -55,30 +47,22 @@
 }
 
 .cart_items_container .products .item_container .image_container {
-  width: 80px;
-  height: 80px;
   -webkit-box-shadow: 0 0 0.5rem #64646449;
           box-shadow: 0 0 0.5rem #64646449;
 }
 
 .cart_items_container .products .item_container .info .name {
   margin: 0;
-  font-weight: 700;
-  font-size: 1.2rem;
 }
 
 .cart_items_container .products .item_container .info .price {
   margin: 0;
   color: #a6a6a6;
-  font-weight: 600;
 }
 
 .cart_items_container .cart_bottom {
   position: fixed;
-  top: 29rem;
-  height: 7rem;
   background-color: #fff;
-  width: 17rem;
 }
 
 .cart_items_container .cart_bottom .total {
@@ -93,13 +77,46 @@
 
 .cart_items_container .cart_bottom .checkout_btn {
   display: block;
-  width: 17rem;
   text-transform: uppercase;
   text-align: center;
   border-radius: 0.2rem;
-  line-height: 2.5rem;
   color: #fff;
   background-color: #d87d48;
+}
+
+@media (max-width: 10240px) {
+  .cart_items_container {
+    height: 30rem;
+    width: 20rem;
+    padding: 1.5rem;
+  }
+  .cart_items_container .cart_top .total_amount {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .products .item_container {
+    height: 6rem;
+  }
+  .products .item_container .image_container {
+    width: 80px;
+    height: 80px;
+  }
+  .products .item_container .info .name {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .products .item_container .info .price {
+    font-weight: 600;
+  }
+  .cart_bottom {
+    top: 29rem;
+    height: 7rem;
+    width: 17rem;
+  }
+  .cart_bottom .checkout_btn {
+    width: 17rem;
+    line-height: 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {

@@ -1,15 +1,12 @@
 import React, { FC, useContext} from 'react';
+import { Context } from '../pages/_app';
 import Image from 'next/image';
 
 //  components
 import CartItems from './CartItems';
 
-//  types
-import { CartProps } from '../lib/Types';
-
 //  styles
 import styles from '../styles/css/cart.module.css';
-import { Context } from '../pages/_app';
 
 
 

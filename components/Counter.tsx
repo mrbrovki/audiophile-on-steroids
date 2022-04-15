@@ -4,9 +4,11 @@ import { Context } from '../pages/_app';
 //  types
 import { CounterProps } from '../lib/Types';
 
+// functions
+import { getAmount } from '../lib/MyFunctions';
+
 //  styles
 import styles from '../styles/css/counter.module.css';
-import { getAmount } from '../lib/MyFunctions';
 
 
 

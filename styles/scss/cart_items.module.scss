@@ -6,20 +6,13 @@
  background-color: white;
  top: 6rem;
  right: 10vw;
- width: 20rem;
- height: 30rem;
+ overflow-y: scroll;
  border-radius: 0.2rem;
- padding: 1.5rem;
-overflow-y: scroll;
+
  .cart_top{
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  .total_amount{
-   font-weight: 600;
-   font-size: 1.5rem;
-  }
 
   .remove_btn{
    font-weight: 700;
@@ -32,17 +25,18 @@ overflow-y: scroll;
    }
   }
  }
+
  .products{
   margin-bottom: 6rem;
+  
   .item_container{
+
    height: 6rem;
    display: flex;
    justify-content: space-around;
    align-items: center;
 
    .image_container{
-    width: 80px;
-    height: 80px;
     box-shadow: $img-shadow;
    }
 
@@ -50,44 +44,85 @@ overflow-y: scroll;
 
     .name{
      margin: 0;
-     font-weight: 700;
-     font-size: 1.2rem;
     }
 
     .price{
      margin: 0;
      color: $clr-grey;
+    }
+   }
+  }
+ }
+ 
+ .cart_bottom{
+  position: fixed;
+  background-color: $clr-white;
+
+  .total{
+   display: flex;
+   justify-content: space-between;
+   background-color: $clr-white;
+  }
+  .checkout_btn{
+   display: block;
+   text-transform: uppercase;
+   text-align: center;
+   border-radius: 0.2rem;
+   color: $clr-white;
+   background-color: $clr-orange;
+  }
+ }
+}
+@include desktop{
+
+ .cart_items_container{
+  height: 30rem;
+  width: 20rem;
+  padding: 1.5rem;
+
+  .cart_top{
+
+   .total_amount {
+    font-weight: 600;
+    font-size: 1.5rem;
+   }
+  }
+ }
+
+ .products {
+ 
+  .item_container {
+   height: 6rem;
+ 
+   .image_container {
+    width: 80px;
+    height: 80px;
+   }
+ 
+   .info {
+ 
+    .name {
+     font-weight: 700;
+     font-size: 1.2rem;
+    }
+ 
+    .price {
      font-weight: 600;
     }
    }
   }
  }
  
-.cart_bottom{
- position: fixed;
- top: 29rem;
- height: 7rem;
- background-color: $clr-white;
- width: 17rem;
-
- .total{
-  display: flex;
-  justify-content: space-between;
-  background-color: $clr-white;
- }
- .checkout_btn{
-  display: block;
+ .cart_bottom {
+  top: 29rem;
+  height: 7rem;
   width: 17rem;
-  text-transform: uppercase;
-  text-align: center;
-  border-radius: 0.2rem;
-  line-height: 2.5rem;
-  color: $clr-white;
-  background-color: $clr-orange;
+ 
+  .checkout_btn {
+   width: 17rem;
+   line-height: 2.5rem;
+  }
  }
-
-}
-
 }
 
 @include mobile{
@@ -98,21 +133,27 @@ overflow-y: scroll;
   height: 24rem;
   
   .products{
+
    .item_container{
+
     .image_container{
      width: 60px;
      height: 60px;
     }
+
     .info{
+
      .name{
       font-size: 1rem;
      }
+
      .price{
       font-size: 0.8rem;
      }
     }
    }
   }
+
   .cart_bottom{
    width: 13rem;
    height: 6rem;

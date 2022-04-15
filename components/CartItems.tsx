@@ -3,6 +3,11 @@ import { Context } from '../pages/_app';
 import Link from 'next/link';
 import Image from 'next/image';
 import useSWR from "swr";
+
+//  components
+import Counter from './Counter';
+
+//  functions
 import { dot, getAmount } from '../lib/MyFunctions';
 
 //  types
@@ -10,9 +15,9 @@ import { CartProductProps } from '../lib/Types';
 
 //  const
 import { baseURL } from '../lib/Const';
+
 //  styles
 import styles from '../styles/css/cart_items.module.css';
-import Counter from './Counter';
 
 
 
