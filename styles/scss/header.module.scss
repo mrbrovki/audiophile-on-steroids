@@ -25,15 +25,16 @@
 
 @include desktop {
 
-    .header_container{
-      grid-template-columns: 143px 1fr 1.5rem;
-      padding: 0 5rem;
+  .header_container{
+    grid-template-columns: 143px 1fr 1.5rem;
+    padding: 0 5rem;
 
-      &::after{
-        width: calc(100% - 10rem);
-      }
+    &::after{
+      width: calc(100% - 10rem);
+    }
   }
 }
+
 @include tablet{
   
   .header_container{

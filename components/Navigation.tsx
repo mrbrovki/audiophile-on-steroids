@@ -1,6 +1,7 @@
 import React, {FC, useContext, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Context } from '../pages/_app';
 import { categories } from '../public/categories';
 
 //  styles
@@ -8,7 +9,6 @@ import styles from '../styles/css/navigation.module.css';
 
 //  types
 import { NavProps } from '../lib/Types';
-import { Context } from '../pages/_app';
 
 
 

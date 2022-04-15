@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import React, { FC, useContext } from 'react';
-import { shippingPrice, vat } from '../lib/Const';
-import { dot } from '../lib/MyFunctions';
 import { Context } from '../pages/_app';
+
+//  functions
+import { dot } from '../lib/MyFunctions';
+
+//  const
+import { shippingPrice, vat } from '../lib/Const';
 
 // styles
 import styles from '../styles/css/summary.module.css';
@@ -10,12 +14,10 @@ import styles from '../styles/css/summary.module.css';
 
 
 const Summary:FC= () => {
-
  const {state: {total: {totalPrice}}, dispatch} = useContext(Context);
  const pay = () =>{
   dispatch({type: 'REMOVE_ALL_PRODUCTS', payload: []});
  };
-
   return (
     <div className={styles.summary_container}>
      <table className={styles.table_container}>

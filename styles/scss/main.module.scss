@@ -9,11 +9,13 @@
           background-color: $main-bg-clr;
      }
 }
+
 @include tablet{
      .main_container{
           padding: 5rem 4rem;
      }
 }
+
 @include mobile {
      .main_container {
           padding: 5rem 2rem;

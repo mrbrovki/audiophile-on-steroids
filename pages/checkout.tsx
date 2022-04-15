@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 // components
 import GoBackButton from '../components/GoBackButton';
 import Main from '../components/Layout/Main';
+import Summary from '../components/Summary';
 
 // styles
 import styles from '../styles/css/checkout.module.css';
@@ -12,7 +13,6 @@ import styles from '../styles/css/checkout.module.css';
 // types
 import { NextPage } from 'next';
 import { PaymentInputRef } from '../lib/Types';
-import Summary from '../components/Summary';
 
 
 

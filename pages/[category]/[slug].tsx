@@ -52,7 +52,7 @@ export const getStaticProps:GetStaticProps= async (context) =>{
 const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
   const router = useRouter();
   const {dispatch} = useContext(Context);
-  const addToCart = (amount: number) =>{
+  const addToCart = (amount: number) => {
     dispatch({type: 'ADD_PRODUCT', payload: {id: productProps.id, amount: amount, price: productProps.price}});
     if(amount){
       dispatch({type:'CART', payload: true});

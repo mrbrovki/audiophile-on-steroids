@@ -1,6 +1,4 @@
-import React, { FC, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import React, { FC } from 'react';
 
 //components
 import Cart from '../Cart';
@@ -14,7 +12,6 @@ import styles from '../../styles/css/header.module.css';
 
 
 const Header:FC = () => {
-
   return (
     <>
       <header className={styles.header_container}>

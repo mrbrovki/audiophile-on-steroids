@@ -27,7 +27,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         return {...state, total: {amount: payload.amount, totalPrice: payload.totalPrice}};
       case "ADD_PRODUCT":
         let isMatch = false;
-        const newArr = state.products.map(product=>{
+        const newArr = state.products.map(product =>{
           if(product.id === payload.id){
             isMatch = true;
             return {...product, amount: product.amount + payload.amount};
@@ -46,7 +46,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             return product;
           }
         });
-        return {...state, products: newProducts}
+        return {...state, products: newProducts};
       case "REMOVE_ALL_PRODUCTS":
         return {...state, products: payload};
       case 'OVERLAY':

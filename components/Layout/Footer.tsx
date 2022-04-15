@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 //  components
 import Navigation from '../Navigation';
@@ -6,7 +6,9 @@ import Navigation from '../Navigation';
 //  styles
 import styles from '../../styles/css/footer.module.css';
 
-const Footer = () => {
+
+
+const Footer:FC = () => {
   return (
     <footer className={styles.footer_container}>
       <Navigation navType='FOOTER'/>
