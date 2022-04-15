@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero type='home'/>
-      <Main marginTop='26.4rem' backgroundColor='#fff'>
+      <Main marginTop='0' backgroundColor='#fff'>
         <CategoryLinks />
         <section className={styles.home_products}>
           <div className={styles.zx9}>
