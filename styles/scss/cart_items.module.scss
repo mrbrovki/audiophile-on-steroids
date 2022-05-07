@@ -4,10 +4,12 @@
 .cart_items_container{
  position: absolute;
  background-color: white;
+ opacity: 0;
  top: 6rem;
  overflow-y: scroll;
  border-radius: 0.2rem;
-
+ animation: fadeIn 0.3s 0.3s forwards;
+ 
  .cart_top{
   display: flex;
   justify-content: space-between;
@@ -173,5 +175,14 @@
     line-height: 1.8rem;
    }
   }
+ }
+}
+
+@keyframes fadeIn{
+ from{
+  opacity: 0;
+ }
+ to{
+  opacity: 1;
  }
 }
