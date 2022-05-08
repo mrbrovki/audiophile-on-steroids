@@ -1,10 +1,12 @@
-import React, { FC, useContext, useEffect, useState } from 'react';
+import React, { FC, useContext } from 'react';
 import Image from 'next/image';
-// styles
-import styles from '../styles/css/orders_container.module.css';
-import { Product } from '../lib/Types';
 import { dot } from '../lib/MyFunctions';
 import { Context } from '../context';
+// styles
+import styles from '../styles/css/orders_container.module.css';
+
+
+
 const OrdersContainer:FC = () => {
   const {state: {products, total}} = useContext(Context);
   const firstProduct = products[0];

@@ -39,7 +39,7 @@ const Category:NextPage<{data: CategoryProduct[]}> = ({data}) => {
     return(
       <div className={styles.grid_container} key={product.id}>
             <div className={styles.image}>
-              <Image src={product.image.desktop} layout='fill' objectFit='contain' alt='item'/>
+              <Image src={product.image.desktop} layout='fill' objectFit='contain' alt='item' />
             </div>
             <div className={styles.info}>
               <p className={styles.new}>{product.new && 'NEW PRODUCT'}</p>

@@ -70,6 +70,7 @@ const CartItems = () => {
       );
     }
   }, [data]);
+  
   useEffect(() =>{
       const total = products.reduce((total, product) => {
         const {amount} = product;

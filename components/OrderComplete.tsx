@@ -2,10 +2,10 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { FC, useContext } from 'react';
 import { Context } from '../context';
+import OrdersContainer from './OrdersContainer';
 
 // styles 
 import styles from '../styles/css/order_complete.module.css';
-import OrdersContainer from './OrdersContainer';
 
 
 const OrderComplete:FC = () => {
