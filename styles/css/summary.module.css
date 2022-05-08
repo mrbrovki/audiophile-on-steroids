@@ -23,6 +23,7 @@
 
 .summary_container .summary_btn {
   display: block;
+  border: none;
   margin-top: 3rem;
   text-transform: uppercase;
   text-align: center;
@@ -31,11 +32,17 @@
   background-color: #d87d48;
   opacity: 0.9;
   line-height: 2rem;
+  width: 100%;
 }
 
 .summary_container .summary_btn:hover {
   opacity: 1;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.summary_container .summary_btn:disabled {
+  background-color: #d87d48bd;
 }
 /*# sourceMappingURL=summary.module.css.map */

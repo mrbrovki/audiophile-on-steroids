@@ -1,0 +1,92 @@
+@import "variables";
+@import "responsive";
+
+@include desktop{
+ .modal_container{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.045);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: fadeIn 0.3s 0.3s forwards;
+  z-index: 100;
+  
+  .modal{
+   border-radius: 0.5rem;
+   background-color: $clr-white;
+   width: 40rem;
+   height: 40rem;
+   padding: 2rem;
+
+   .heading{
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+   }
+
+   .info{
+    color: $clr-grey;
+   }
+
+   .back_to_home_btn{
+     display: block;
+     border: none;
+     margin-top: 3rem;
+     text-transform: uppercase;
+     text-align: center;
+     border-radius: 0.2rem;
+     color: $clr-white;
+     background-color: $clr-orange;
+     opacity: 0.9;
+     line-height: 3rem;
+     width: 100%;
+    
+     &:hover {
+      opacity: 1;
+      transition: opacity 0.3s;
+      cursor: pointer;
+     }
+   }
+  }
+ }
+}
+
+@include tablet {
+ 
+ .modal_container {
+
+  .modal{
+   width: 30rem;
+   height: 32rem;
+
+   .heading{
+     font-size: 1.75rem;
+   }
+  }
+ }
+}
+
+@include mobile {
+ .modal_container{
+
+  .modal{
+   width: 90%;
+   height: 90%;
+  }
+ }
+}
+
+@keyframes fadeIn {
+ from{
+  opacity: 0;
+ }
+ to{
+  opacity: 1;
+ }
+}

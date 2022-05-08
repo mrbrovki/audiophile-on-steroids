@@ -13,6 +13,7 @@ import styles from '../styles/css/checkout.module.css';
 // types
 import { NextPage } from 'next';
 import { PaymentInputRef } from '../lib/Types';
+import OrderComplete from '../components/OrderComplete';
 
 
 
@@ -35,7 +36,7 @@ const Checkout:NextPage = () => {
         <title>CHECKOUT</title>
       </Head>
       <Main marginTop='0rem' backgroundColor='#F1F1F1' >
-         <GoBackButton router={router} marginTop='5rem'/>
+        <GoBackButton router={router} marginTop='5rem'/>
         <div className={styles.checkout_container}>
            <form>
             <fieldset>
@@ -108,7 +109,8 @@ const Checkout:NextPage = () => {
             </fieldset>
           </form>
           <Summary />
-         </div>
+        </div>
+        {<OrderComplete />}
       </Main>
     </>
   );

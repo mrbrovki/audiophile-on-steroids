@@ -81,9 +81,18 @@
   display: block;
   text-transform: uppercase;
   text-align: center;
+  border: none;
   border-radius: 0.2rem;
   color: #fff;
   background-color: #d87d48;
+}
+
+.cart_items_container .cart_bottom .checkout_btn:disabled {
+  background-color: #d87d48bd;
+}
+
+.cart_items_container .cart_bottom .checkout_btn:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 10240px) {

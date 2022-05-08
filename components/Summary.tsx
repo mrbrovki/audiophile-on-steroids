@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { FC, useContext } from 'react';
-import { Context } from '../pages/_app';
+import { Context } from '../context';
 
 //  functions
 import { dot } from '../lib/MyFunctions';
@@ -14,15 +14,18 @@ import styles from '../styles/css/summary.module.css';
 
 
 const Summary:FC= () => {
- const {state: {total: {totalPrice}}, dispatch} = useContext(Context);
- const pay = () =>{
-  dispatch({type: 'REMOVE_ALL_PRODUCTS', payload: []});
+ const {state: {total: {totalPrice, amount}}, dispatch} = useContext(Context);
+ const submitOrder = () =>{
+  dispatch({type: 'OVERLAY', payload: true});
+  dispatch({type:'SUBMIT_ORDER', payload: true})
  };
   return (
     <div className={styles.summary_container}>
      <table className={styles.table_container}>
       <thead>
-       <th align='left' className={styles.heading}>summary</th>
+        <tr>
+          <th align='left' className={styles.heading}>summary</th>
+        </tr>
       </thead>
       <tbody>
        <tr>
@@ -44,9 +47,8 @@ const Summary:FC= () => {
       </tbody>
      </table>
 
-     <Link href={'/'}>
-      <a onClick={pay} className={styles.summary_btn}>continue & pay</a>
-     </Link>
+    <button onClick={submitOrder} className={styles.summary_btn} disabled={0 === amount}>continue & pay</button>
+
     </div>
   );
 };

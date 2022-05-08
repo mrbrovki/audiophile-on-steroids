@@ -23,6 +23,7 @@
 
  .summary_btn{
   display: block;
+  border: none;
   margin-top: 3rem;
   text-transform: uppercase;
   text-align: center;
@@ -31,10 +32,16 @@
   background-color: $clr-orange;
   opacity: 0.9;
   line-height: 2rem;
+  width: 100%;
 
   &:hover{
    opacity: 1;
    transition: opacity 0.3s;
+   cursor: pointer;
+  }
+
+  &:disabled{
+   background-color: $disabled-orange;
   }
  }
 }

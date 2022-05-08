@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Context } from '../pages/_app';
-import Link from 'next/link';
+import { Context } from '../context';
 import Image from 'next/image';
 import useSWR from "swr";
 
@@ -18,12 +17,14 @@ import { baseURL } from '../lib/Const';
 
 //  styles
 import styles from '../styles/css/cart_items.module.css';
+import { useRouter } from 'next/router';
 
 
 
 const CartItems = () => {
   const {state: {products, total}, dispatch} = useContext(Context);
   const [items, setItems] = useState([] as JSX.Element[]);
+  const router = useRouter();
   const removeAllItems = () =>{
     dispatch({type: 'REMOVE_ALL_PRODUCTS', payload: []});
   };
@@ -41,6 +42,7 @@ const CartItems = () => {
     dispatch({type: 'OVERLAY', payload: false});
     dispatch({type: 'CART', payload: false});
     dispatch({type:'NAVBAR', payload:'hidden'});
+    router.push('/checkout');
   };
 
   useEffect(()=>{
@@ -92,9 +94,7 @@ const CartItems = () => {
         <p style={{color: '#a6a6a6'}}>Total</p>
         <p>${dot(total.totalPrice)}</p>
       </div>
-      <Link href='/checkout'>
-        <a className={styles.checkout_btn} onClick={closeAll}>checkout</a>
-      </Link>
+        <button className={styles.checkout_btn} onClick={closeAll} disabled={0 === products.length}>checkout</button>
       </div>
     </div>
   );

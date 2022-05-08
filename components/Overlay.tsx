@@ -1,6 +1,5 @@
 import React, {FC, useContext} from 'react';
-import { Context } from '../pages/_app';
-
+import { Context } from '../context';
 // styles
 import styles from '../styles/css/overlay.module.css';
 

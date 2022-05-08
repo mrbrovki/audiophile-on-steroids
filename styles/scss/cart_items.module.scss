@@ -64,13 +64,22 @@
    justify-content: space-between;
    background-color: $clr-white;
   }
+
   .checkout_btn{
    display: block;
    text-transform: uppercase;
    text-align: center;
+   border: none;
    border-radius: 0.2rem;
    color: $clr-white;
    background-color: $clr-orange;
+
+   &:disabled{
+    background-color: $disabled-orange;
+   }
+   &:hover{
+    cursor: pointer;
+   }
   }
  }
 }

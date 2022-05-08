@@ -22,7 +22,7 @@ export interface CategoryProduct{
 export interface ProductProps{
   id: number;
   name: string;
-  image: {desktop: string};
+  image: {desktop: string, mobile: string};
   description: string;
   new: boolean;
   price: number;
@@ -74,12 +74,15 @@ export type Action =
 | {type: "OVERLAY", payload: boolean}
 | {type: "NAVBAR", payload: string}
 | {type: "CART", payload: boolean}
+| {type: "SUBMIT_ORDER", payload: boolean}
 
 
 export interface Product{
   id: number;
+  name: string;
   amount: number;
   price: number;
+  image: string;
 };
 
 export interface State{
@@ -88,6 +91,7 @@ export interface State{
   isOverlay: boolean;
   navBarVisiblity: 'hidden' | 'shown';
   isCartVisible: boolean;
+  orderComplete: boolean;
 };
 
 export interface NavProps{

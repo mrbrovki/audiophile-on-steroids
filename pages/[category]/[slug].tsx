@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Context } from '../_app';
+import { Context } from '../../context';
 import Head from 'next/head';
 
 //  functions
@@ -53,7 +53,7 @@ const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
   const router = useRouter();
   const {dispatch} = useContext(Context);
   const addToCart = (amount: number) => {
-    dispatch({type: 'ADD_PRODUCT', payload: {id: productProps.id, amount: amount, price: productProps.price}});
+    dispatch({type: 'ADD_PRODUCT', payload: {id: productProps.id, name: productProps.name, amount: amount, price: productProps.price, image: productProps.image.mobile}});
     if(amount){
       dispatch({type:'CART', payload: true});
       dispatch({type: 'OVERLAY', payload: true});

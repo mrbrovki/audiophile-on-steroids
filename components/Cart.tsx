@@ -1,5 +1,5 @@
 import React, { FC, useContext} from 'react';
-import { Context } from '../pages/_app';
+import { Context } from '../context';
 import Image from 'next/image';
 
 //  components

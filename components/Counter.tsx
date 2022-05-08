@@ -1,5 +1,5 @@
 import React, { FC, useContext, useEffect, useState } from 'react';
-import { Context } from '../pages/_app';
+import { Context } from '../context';
 
 //  types
 import { CounterProps } from '../lib/Types';

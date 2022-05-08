@@ -1,7 +1,7 @@
 import React, {FC, useContext, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Context } from '../pages/_app';
+import { Context } from '../context';
 import { categories } from '../public/categories';
 
 //  styles

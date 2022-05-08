@@ -1,0 +1,147 @@
+@media (max-width: 10240px) {
+  .orders_container {
+    width: 100%;
+    height: 12rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  .orders_container .orders {
+    background-color: #F1F1F1;
+    -webkit-box-flex: 70%;
+        -ms-flex: 70%;
+            flex: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 1rem 2rem;
+  }
+  .orders_container .orders .first_product {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 40px 40px;
+  }
+  .orders_container .orders .first_product .image_container {
+    width: 80px;
+    height: 80px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / 3;
+  }
+  .orders_container .orders .first_product .name {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    margin: 0;
+    text-align: center;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    font-weight: 600;
+  }
+  .orders_container .orders .first_product .price {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    margin: 0;
+    text-align: center;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    color: #727272;
+  }
+  .orders_container .orders .first_product .amount {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+    margin: 0;
+    color: #727272;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .orders_container .orders .other_orders {
+    border-top: 1px solid #a6a6a6;
+  }
+  .orders_container .orders .other_orders p {
+    text-align: center;
+    color: #a6a6a6;
+  }
+  .orders_container .total_container {
+    background-color: black;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-left: 2rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .orders_container .total_container .grand_total {
+    color: #727272;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .orders_container .total_container .total_price {
+    color: #fff;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 100;
+  }
+}
+
+@media (max-width: 1024px) {
+  .orders_container {
+    height: 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .orders_container {
+    height: 18rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .orders_container .total_container .grand_total,
+  .orders_container .total_container .total_price {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=orders_container.module.css.map */
