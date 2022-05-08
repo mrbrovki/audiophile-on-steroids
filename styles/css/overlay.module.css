@@ -6,6 +6,7 @@
   z-index: 9;
   width: 100vw;
   height: 100vh;
+  height: -webkit-fill-availble;
   opacity: 0;
   background-color: #191919b8;
   -webkit-animation: fadeIn 0.3s forwards;

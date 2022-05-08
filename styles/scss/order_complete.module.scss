@@ -5,6 +5,7 @@
  .modal_container{
   width: 100vw;
   height: 100vh;
+  height: -webkit-fill-availble;
   background-color: rgba(0, 0, 0, 0.045);
   position: fixed;
   display: flex;

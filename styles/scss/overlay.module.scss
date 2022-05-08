@@ -8,6 +8,7 @@
  z-index: 9;
  width: 100vw;
  height: 100vh;
+ height: -webkit-fill-availble;
  opacity: 0;
  background-color: $bg-clr-overlay;
  animation: fadeIn 0.3s forwards;
