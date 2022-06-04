@@ -130,9 +130,9 @@
       left: 0.5rem;
       max-height: 0rem;
       overflow: hidden;
-      transition: max-height 0.3s;
       position: absolute;
       z-index: 10;
+      animation: fadeIn 0.3s forwards;
 
       .link{
         display: block;
@@ -152,15 +152,7 @@
           }
         }
       }
-    }
-    
-    .shown {
-      max-height: 28rem;
-    }
-
-    .hidden {
-      max-height: 0;
-    }    
+    }   
   }
 
   .company_info {
@@ -204,3 +196,11 @@
   }
 }
 
+@keyframes fadeIn{
+  0%{
+    max-height: 0;
+  }
+  100%{
+    max-height: 28rem;
+  }
+}

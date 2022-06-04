@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-
 //styles
 import styles from '../styles/css/gear.module.css';
 

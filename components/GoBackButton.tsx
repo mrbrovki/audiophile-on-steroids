@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
-
 // types
 import { NextRouter } from 'next/router';
-
 // styles
 import styles from '../styles/css/go_back_button.module.css';
 

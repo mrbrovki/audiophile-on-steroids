@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import Link, { LinkProps } from 'next/link';
-
 //  styles
 import styles from '../styles/css/see_product.module.css';
 

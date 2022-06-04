@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { categories } from '../public/categories';
-
+//  constants
+import { categories } from '../lib/constants';
 //  styles
 import styles from '../styles/css/category_links.module.css';
 
@@ -32,7 +32,6 @@ const CategoryLinks = () => {
     </Link>
   );
  });
-
   return (
     <section className={styles.categories}>
      {catLinks}

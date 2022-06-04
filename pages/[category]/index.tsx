@@ -1,19 +1,18 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import React from 'react';
-import { categories } from '../../public/categories';
-
+//  constants
+import { categories } from '../../lib/constants';
 // types
 import {CategoryContext, CategoryProduct} from '../../lib/Types';
 import type { NextPage, GetStaticProps, GetStaticPaths} from 'next';
-
 //  components 
 import Main from '../../components/Layout/Main';
 import Hero from '../../components/Hero';
 import SeeProduct from '../../components/SeeProduct';
-
 //  styles
 import styles from '../../styles/css/category.module.css';
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = categories.map(category =>{
@@ -25,13 +24,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
+
 export const getStaticProps:GetStaticProps = async (context) => {
   const {category} = context.params as CategoryContext;
   const res = await fetch(`https://my-json-server.typicode.com/mrbrovki/demo/${category}`);
   const data = await res.json();
   return {props: {data}};
 };
-
 
 
 const Category:NextPage<{data: CategoryProduct[]}> = ({data}) => {

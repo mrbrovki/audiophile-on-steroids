@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
-
 //  types
 import { InTheBox } from '../../lib/Types';
-
 // styles 
 import styles from '../../styles/css/product_details.module.css';
 

@@ -1,47 +1,40 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Context } from '../context';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+//  hooks
 import useSWR from "swr";
-
+import { useRouter } from 'next/router';
+import { useAppDispatch, useAppSelector } from '../hooks';
 //  components
 import Counter from './Counter';
-
 //  functions
 import { dot, getAmount } from '../lib/MyFunctions';
-
+import { fetcher } from '../lib/fetcher';
 //  types
 import { CartProductProps } from '../lib/Types';
-
-//  const
-import { baseURL } from '../lib/Const';
-
+//  constants
+import { baseURL } from '../lib/constants';
+//  features
+import { calculateTotal, removeAllProducts, setCartVisibility } from '../features/cart/cartSlice';
+import { setOverlayVisibility } from '../features/overlay/overlaySlice';
+import { setNavBarVisibility } from '../features/navigation/navSlice';
 //  styles
 import styles from '../styles/css/cart_items.module.css';
-import { useRouter } from 'next/router';
 
 
 
 const CartItems = () => {
-  const {state: {products, total}, dispatch} = useContext(Context);
-  const [items, setItems] = useState([] as JSX.Element[]);
   const router = useRouter();
-  const removeAllItems = () =>{
-    dispatch({type: 'REMOVE_ALL_PRODUCTS', payload: []});
-  };
+  const {products, total: {totalPrice, amount}} = useAppSelector(state => state.cart);
+  const dispatch = useAppDispatch();
+  const [items, setItems] = useState([] as JSX.Element[]);
   const filter = products.map(product => {
     return `id=${product.id}`;
   }).join('&');
-  const filteredURL = baseURL + filter;
-  const getData = async () =>{
-    const response = await fetch(filteredURL);
-    const data = await response.json();
-    return data;
-  };
-  const {data} = useSWR<CartProductProps[]>(filteredURL, getData);
+  const {data} = useSWR<CartProductProps[]>(baseURL + filter, fetcher);
   const closeAll = () =>{
-    dispatch({type: 'OVERLAY', payload: false});
-    dispatch({type: 'CART', payload: false});
-    dispatch({type:'NAVBAR', payload:'hidden'});
+    dispatch(setOverlayVisibility(false));
+    dispatch(setCartVisibility(false));
+    dispatch(setNavBarVisibility(false));
     router.push('/checkout');
   };
 
@@ -64,7 +57,7 @@ const CartItems = () => {
             );
           }
           else{
-            return <React.Fragment key={item.id}></React.Fragment>
+            return(<></>)
           }
         })
       );
@@ -72,20 +65,14 @@ const CartItems = () => {
   }, [data]);
   
   useEffect(() =>{
-      const total = products.reduce((total, product) => {
-        const {amount} = product;
-        total.amount += amount;
-        total.totalPrice += product.price * amount;
-        return total;
-      }, {amount: 0, totalPrice:0});
-    dispatch({type: 'TOTAL', payload: total});
+    dispatch(calculateTotal());
   }, [products]);
 
   return (
     <div className={styles.cart_items_container}>
       <div className={styles.cart_top}>
-        <div className={styles.total_amount}>CART({total.amount})</div>
-        <button onClick={removeAllItems} className={styles.remove_btn}>Remove all</button>
+        <div className={styles.total_amount}>CART({amount})</div>
+        <button onClick={() => dispatch(removeAllProducts())} className={styles.remove_btn}>Remove all</button>
       </div>
       <div className={styles.products}>
         {items}
@@ -93,9 +80,9 @@ const CartItems = () => {
       <div className={styles.cart_bottom}>
       <div className={styles.total}>
         <p style={{color: '#a6a6a6'}}>Total</p>
-        <p>${dot(total.totalPrice)}</p>
+        <p>${dot(totalPrice)}</p>
       </div>
-        <button className={styles.checkout_btn} onClick={closeAll} disabled={0 === products.length}>checkout</button>
+        <button className={styles.checkout_btn} onClick={closeAll} disabled={products==[]}>checkout</button>
       </div>
     </div>
   );

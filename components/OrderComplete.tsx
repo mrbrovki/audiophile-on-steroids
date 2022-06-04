@@ -1,25 +1,31 @@
+import React, { FC } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import React, { FC, useContext } from 'react';
-import { Context } from '../context';
+//  components
 import OrdersContainer from './OrdersContainer';
-
+//  hooks
+import { useRouter } from 'next/router';
+import { useAppDispatch, useAppSelector } from '../hooks';
 // styles 
 import styles from '../styles/css/order_complete.module.css';
+//  features
+import { removeAllProducts, submitOrder } from '../features/cart/cartSlice';
+import { setOverlayVisibility } from '../features/overlay/overlaySlice';
+
 
 
 const OrderComplete:FC = () => {
-  const {state: {orderComplete}, dispatch} = useContext(Context);
   const router = useRouter();
+  const {isOrderComplete} = useAppSelector(state => state.cart);
+  const dispatch = useAppDispatch();
   const proceed = () =>{
-    dispatch({type:'REMOVE_ALL_PRODUCTS', payload: []});
-    dispatch({type: 'OVERLAY', payload: false});
-    dispatch({type: 'SUBMIT_ORDER', payload: false});
+    dispatch(removeAllProducts());
+    dispatch(setOverlayVisibility(false));
+    dispatch(submitOrder(false));
     router.replace('/');
   }
   return (
     <>
-      {orderComplete && 
+      {isOrderComplete && 
         <div className={styles.modal_container}>
           <div className={styles.modal}>
             <div className={styles.image_container}>

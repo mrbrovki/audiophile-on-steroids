@@ -1,19 +1,15 @@
 import React, { FC, ReactNode } from 'react';
 import Image from 'next/image';
-
 //  components
 import SeeProduct from './SeeProduct';
-
 //  types
 import { HeroType } from '../lib/Types';
-
 //  styles
 import styles from '../styles/css/hero.module.css';
 
 
 
 const Hero:FC<{type: HeroType, children?: ReactNode}> = ({type, children}) => {
-  
   switch(type){
     case 'home':
       return (

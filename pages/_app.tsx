@@ -1,10 +1,9 @@
+import { store } from '../store';
+import { Provider } from 'react-redux'
 //  components
 import Layout from '../components/Layout';
-//  context
-import AppContext from '../context';
 //  types
 import type { AppProps } from 'next/app';
-
 //  styles
 import '../styles/css/globals.css';
 
@@ -12,11 +11,11 @@ import '../styles/css/globals.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <AppContext>
+    <Provider store={store}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </AppContext>
+    </Provider>
   );
 };
 

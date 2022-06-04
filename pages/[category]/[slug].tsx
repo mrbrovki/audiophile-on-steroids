@@ -1,12 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { Context } from '../../context';
 import Head from 'next/head';
-
 //  functions
 import { dot } from '../../lib/MyFunctions';
-
 //  components
 import Main from '../../components/Layout/Main';
 import Counter from '../../components/Counter';
@@ -16,13 +12,18 @@ import ProductDetails from '../../components/Product/ProductDetails';
 import Gear from '../../components/Gear';
 import CategoryLinks from '../../components/CategoryLinks';
 import GoBackButton from '../../components/GoBackButton';
-
 //  types
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import {ProductContext, ProductProps} from '../../lib/Types';
-
 //  styles
 import styles from '../../styles/css/product.module.css';
+//  features
+import {addProduct, setCartVisibility} from '../../features/cart/cartSlice';
+import { setOverlayVisibility } from '../../features/overlay/overlaySlice';
+//  hooks
+import { useAppDispatch } from '../../hooks';
+import { useRouter } from 'next/router';
+
 
 export const getStaticPaths:GetStaticPaths = async () =>{
  const res = await fetch('https://my-json-server.typicode.com/mrbrovki/demo/all');
@@ -38,6 +39,7 @@ export const getStaticPaths:GetStaticPaths = async () =>{
  };
 };
 
+
 export const getStaticProps:GetStaticProps= async (context) =>{
  const {slug, category} = context.params as ProductContext;
  const res = await fetch(`https://my-json-server.typicode.com/mrbrovki/demo/${category}?slug=${slug}`);
@@ -48,15 +50,14 @@ export const getStaticProps:GetStaticProps= async (context) =>{
 };
 
 
-
 const Product:NextPage<{productProps: ProductProps}> = ({productProps}) => {
   const router = useRouter();
-  const {dispatch} = useContext(Context);
+  const dispatch = useAppDispatch();
   const addToCart = (amount: number) => {
-    dispatch({type: 'ADD_PRODUCT', payload: {id: productProps.id, name: productProps.name, amount: amount, price: productProps.price, image: productProps.image.mobile}});
+    dispatch(addProduct({id: productProps.id, name: productProps.name, amount: amount, price: productProps.price, image: productProps.image.mobile}))
     if(amount){
-      dispatch({type:'CART', payload: true});
-      dispatch({type: 'OVERLAY', payload: true});
+      dispatch(setCartVisibility(true));
+      dispatch(setOverlayVisibility(true));
     }
   };
   return (

@@ -1,12 +1,9 @@
 import React, {FC} from 'react';
 import Image from 'next/image';
-
 //  components
 import SeeProduct from './SeeProduct';
-
 // types
 import { Others } from '../lib/Types';
-
 // styles
 import styles from '../styles/css/others.module.css';
 

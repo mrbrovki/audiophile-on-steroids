@@ -148,7 +148,7 @@
 
  .cart_items_container{
   padding: 1rem;
-  width: 15rem;
+  width: 18rem;
   height: 24rem;
   right: 2rem;
   
@@ -179,8 +179,11 @@
    height: 6rem;
    top: 24rem;
 
+   .total{
+    width: 16rem;
+   }
    .checkout_btn {
-    width: 100%;
+    width: 16rem;
     line-height: 1.8rem;
    }
   }

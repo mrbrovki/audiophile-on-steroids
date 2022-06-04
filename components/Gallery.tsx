@@ -1,9 +1,7 @@
 import React, {FC} from 'react';
 import Image from 'next/image';
-
 //  types
 import { ProductGallery } from '../lib/Types';
-
 // styles
 import styles from '../styles/css/gallery.module.css';
 

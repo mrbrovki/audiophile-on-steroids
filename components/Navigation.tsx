@@ -1,34 +1,38 @@
-import React, {FC, useContext, useState} from 'react';
+import React, {FC} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Context } from '../context';
-import { categories } from '../public/categories';
-
+//  constants
+import { categories } from '../lib/constants';
 //  styles
 import styles from '../styles/css/navigation.module.css';
-
 //  types
 import { NavProps } from '../lib/Types';
-
+//  features
+import { setOverlayVisibility } from '../features/overlay/overlaySlice';
+import { setCartVisibility } from '../features/cart/cartSlice';
+import { setNavBarVisibility } from '../features/navigation/navSlice';
+//  hooks
+import { useAppDispatch, useAppSelector } from '../hooks';
 
 
 
 const Navigation:FC<NavProps> = ({navType}) => {
-  const {state:{navBarVisiblity}, dispatch} = useContext(Context);
+  const dispatch = useAppDispatch();
+  const navBarVisiblity = useAppSelector(state => state.navigation.navBarVisiblity);
   const closeAll = () =>{
-    dispatch({type: 'OVERLAY', payload: false});
-    dispatch({type: 'CART', payload: false});
-    dispatch({type:'NAVBAR', payload:'hidden'});
+    dispatch(setOverlayVisibility(false));
+    dispatch(setCartVisibility(false));
+    dispatch(setNavBarVisibility(false));
   };
   const toggleNav = () => {
-    if(navBarVisiblity === 'hidden'){
-      dispatch({type: 'CART', payload: false});
-      dispatch({type:'NAVBAR', payload:'shown'});
-      dispatch({type: 'OVERLAY', payload: true});
+    if(navBarVisiblity === false){
+      dispatch(setCartVisibility(false));
+      dispatch(setNavBarVisibility(true));
+      dispatch(setOverlayVisibility(true));
     }
     else{
-      dispatch({type:'NAVBAR', payload:'hidden'});
-      dispatch({type: 'OVERLAY', payload: false});
+      dispatch(setNavBarVisibility(false));
+      dispatch(setOverlayVisibility(false));
     }
   };
   switch(navType){
@@ -44,23 +48,25 @@ const Navigation:FC<NavProps> = ({navType}) => {
             <div className={styles.hamburger} onClick={toggleNav}> 
               <Image src='/assets/shared/tablet/icon-hamburger.svg' alt='hamburger' width={25}  height={25}/>
             </div>
-            <ul className={styles.nav_list + ' ' + styles[navBarVisiblity]}>
-              <li className={styles.link} onClick={closeAll}>
-                <Link href={'/'}>
-                  <a>home</a>
-                </Link>
-               </li>
-                {categories.map(category =>{
-                  return(
-                    <li key={category} className={styles.link} onClick={closeAll}>
-                      <Link href={`/${category}`}>
-                        <a>{category}</a>
-                      </Link>
-                    </li>
-                  );
-                })
-              }
-            </ul>      
+            {navBarVisiblity && 
+              <ul className={styles.nav_list}>
+                <li className={styles.link} onClick={closeAll}>
+                  <Link href={'/'}>
+                    <a>home</a>
+                  </Link>
+                 </li>
+                  {categories.map(category =>{
+                    return(
+                      <li key={category} className={styles.link} onClick={closeAll}>
+                        <Link href={`/${category}`}>
+                          <a>{category}</a>
+                        </Link>
+                      </li>
+                    );
+                  })
+                }
+              </ul>
+            } 
           </nav>
         </>
       );

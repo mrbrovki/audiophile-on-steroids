@@ -128,10 +128,10 @@
     left: 0.5rem;
     max-height: 0rem;
     overflow: hidden;
-    -webkit-transition: max-height 0.3s;
-    transition: max-height 0.3s;
     position: absolute;
     z-index: 10;
+    -webkit-animation: fadeIn 0.3s forwards;
+            animation: fadeIn 0.3s forwards;
   }
   .header_nav_container .nav_list .link {
     display: block;
@@ -147,12 +147,6 @@
   }
   .header_nav_container .nav_list .link:hover a {
     color: #fff;
-  }
-  .header_nav_container .shown {
-    max-height: 28rem;
-  }
-  .header_nav_container .hidden {
-    max-height: 0;
   }
   .company_info {
     width: 50%;
@@ -186,6 +180,24 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 28rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 28rem;
   }
 }
 /*# sourceMappingURL=navigation.module.css.map */

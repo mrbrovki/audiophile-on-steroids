@@ -85,15 +85,6 @@ export interface Product{
   image: string;
 };
 
-export interface State{
-  products: Array<Product>;
-  total: {amount: number, totalPrice: number};
-  isOverlay: boolean;
-  navBarVisiblity: 'hidden' | 'shown';
-  isCartVisible: boolean;
-  orderComplete: boolean;
-};
-
 export interface NavProps{
   navType: string;
 };
@@ -116,3 +107,18 @@ export interface PaymentInputRef{
   e_money: HTMLInputElement | null;
   cash: HTMLInputElement | null;
 };
+
+export interface CartInitState{
+  products: Array<Product>;
+  total: {amount: number, totalPrice: number};
+  isCartVisible: boolean;
+  isOrderComplete: boolean;
+};
+
+export interface OverlayInitState{
+  isOverlay: boolean;
+};
+
+export interface NavInitState{
+  navBarVisiblity: boolean;
+}

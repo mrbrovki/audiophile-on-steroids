@@ -1,16 +1,18 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import Image from 'next/image';
+//  functions
 import { dot } from '../lib/MyFunctions';
-import { Context } from '../context';
 // styles
 import styles from '../styles/css/orders_container.module.css';
+//  hooks
+import { useAppSelector } from '../hooks';
 
 
 
 const OrdersContainer:FC = () => {
-  const {state: {products, total}} = useContext(Context);
+  const {products, total} = useAppSelector(state => state.cart);
   const firstProduct = products[0];
-
+  
   return (
     <div className={styles.orders_container}>
       <div className={styles.orders}>

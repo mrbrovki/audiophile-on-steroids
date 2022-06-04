@@ -1,11 +1,8 @@
 import React, { FC } from 'react';
-
 //components
 import Cart from '../Cart';
-
 //  components
 import Navigation from '../Navigation';
-
 // styles
 import styles from '../../styles/css/header.module.css';
 

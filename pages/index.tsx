@@ -1,14 +1,13 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
-
 //  components
 import CategoryLinks from '../components/CategoryLinks';
 import SeeProduct from '../components/SeeProduct';
 import Main from '../components/Layout/Main';
 import Hero from '../components/Hero';
 import Gear from '../components/Gear';
-
+//  types
+import { NextPage } from 'next';
 //  styles
 import styles from '../styles/css/home.module.css';
 

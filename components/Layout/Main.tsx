@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
-
-//  styles
+// styles
 import styles from '../../styles/css/main.module.css';
-
 // types
 import { MainProps } from '../../lib/Types';
 
