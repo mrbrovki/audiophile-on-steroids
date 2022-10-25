@@ -120,5 +120,5 @@ export interface OverlayInitState{
 };
 
 export interface NavInitState{
-  navBarVisiblity: boolean;
+  navBarVisiblity: 'hidden' | 'shown';
 }

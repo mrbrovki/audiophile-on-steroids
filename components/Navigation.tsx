@@ -22,16 +22,16 @@ const Navigation:FC<NavProps> = ({navType}) => {
   const closeAll = () =>{
     dispatch(setOverlayVisibility(false));
     dispatch(setCartVisibility(false));
-    dispatch(setNavBarVisibility(false));
+    dispatch(setNavBarVisibility('hidden'));
   };
   const toggleNav = () => {
-    if(navBarVisiblity === false){
+    if(navBarVisiblity === 'hidden'){
       dispatch(setCartVisibility(false));
-      dispatch(setNavBarVisibility(true));
+      dispatch(setNavBarVisibility('shown'));
       dispatch(setOverlayVisibility(true));
     }
     else{
-      dispatch(setNavBarVisibility(false));
+      dispatch(setNavBarVisibility('hidden'));
       dispatch(setOverlayVisibility(false));
     }
   };
@@ -48,8 +48,7 @@ const Navigation:FC<NavProps> = ({navType}) => {
             <div className={styles.hamburger} onClick={toggleNav}> 
               <Image src='/assets/shared/tablet/icon-hamburger.svg' alt='hamburger' width={25}  height={25}/>
             </div>
-            {navBarVisiblity && 
-              <ul className={styles.nav_list}>
+              <ul className={styles.nav_list + ' ' + styles[navBarVisiblity]}>
                 <li className={styles.link} onClick={closeAll}>
                   <Link href={'/'}>
                     <a>home</a>
@@ -66,7 +65,6 @@ const Navigation:FC<NavProps> = ({navType}) => {
                   })
                 }
               </ul>
-            } 
           </nav>
         </>
       );

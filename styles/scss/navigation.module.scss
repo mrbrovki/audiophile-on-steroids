@@ -132,7 +132,7 @@
       overflow: hidden;
       position: absolute;
       z-index: 10;
-      animation: fadeIn 0.3s forwards;
+      transition: max-height 0.5s;
 
       .link{
         display: block;
@@ -152,7 +152,15 @@
           }
         }
       }
-    }   
+    }
+
+    .hidden{
+      max-height: 0rem;
+    }
+
+    .shown{
+      max-height: 28rem;
+    }
   }
 
   .company_info {
@@ -193,14 +201,5 @@
   
   .social{
     justify-content: center;
-  }
-}
-
-@keyframes fadeIn{
-  0%{
-    max-height: 0;
-  }
-  100%{
-    max-height: 28rem;
   }
 }

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { NavInitState } from "../../lib/Types";
 
 const initialState:NavInitState = {
- navBarVisiblity: false,
+ navBarVisiblity: 'hidden',
 };
 
 const navSlice = createSlice({
